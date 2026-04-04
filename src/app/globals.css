@@ -54,18 +54,22 @@ body {
   animation: pulse-slow 2s ease-in-out infinite;
 }
 
-@keyframes smoke-rise {
-  0%   { opacity: 0.6; transform: translateY(0)    scale(1)   translateX(0px); }
-  50%  { opacity: 0.3; transform: translateY(-28px) scale(1.6) translateX(4px); }
-  100% { opacity: 0;   transform: translateY(-56px) scale(2.2) translateX(-4px); }
+@keyframes spark-fly {
+  0%   { opacity: 1;   transform: translate(0, 0) scale(1); }
+  70%  { opacity: 0.6; }
+  100% { opacity: 0;   transform: translate(var(--dx), var(--dy)) scale(0.2); }
 }
 
-.smoke-particle {
-  animation: smoke-rise linear infinite;
+.spark-particle {
   position: absolute;
-  bottom: 4px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: rgba(147, 197, 253, 0.25);
-  filter: blur(3px);
+  background: var(--color, #60a5fa);
+  box-shadow: 0 0 5px var(--color, #60a5fa), 0 0 12px var(--color, #60a5fa);
+  animation: spark-fly 0.65s ease-out forwards;
   pointer-events: none;
+  z-index: 20;
+  margin-left: -3px;
+  margin-top: -3px;
 }

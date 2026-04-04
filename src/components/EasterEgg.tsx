@@ -1,73 +1,111 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { i18n } from "@/data/translations";
 
-const PARTICLES = [
-  { left: "8%",  w: 8,  h: 7,  delay: "0s",    dur: "1.6s" },
-  { left: "22%", w: 6,  h: 9,  delay: "0.25s", dur: "1.9s" },
-  { left: "40%", w: 10, h: 8,  delay: "0.1s",  dur: "1.5s" },
-  { left: "58%", w: 7,  h: 10, delay: "0.4s",  dur: "1.8s" },
-  { left: "75%", w: 9,  h: 7,  delay: "0.15s", dur: "1.7s" },
-  { left: "90%", w: 6,  h: 9,  delay: "0.35s", dur: "2.0s" },
-];
+type Spark = { id: number; x: number; y: number; dx: number; dy: number; color: string };
+type TrailDot = { id: number; x: number; y: number; color: string; idx: number };
 
-const CURSOR_OPTIONS = [
-  { value: "crosshair", emoji: "🎯", labelKey: "cursor_crosshair" as const },
-  { value: "zoom-in",   emoji: "🔍", labelKey: "cursor_zoom"      as const },
-  { value: "grab",      emoji: "✊", labelKey: "cursor_grab"      as const },
-  { value: "wait",      emoji: "⏳", labelKey: "cursor_wait"      as const },
-  { value: "help",      emoji: "❓", labelKey: "cursor_help"      as const },
-];
+const COLORS = ["#60a5fa", "#a78bfa", "#f472b6", "#34d399", "#fbbf24", "#fb923c"];
 
 export function EasterEgg() {
   const { lang } = useLanguage();
   const t = i18n.egg;
-
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [sparks, setSparks] = useState<Spark[]>([]);
+  const [trail, setTrail] = useState<TrailDot[]>([]);
   const [isHovered, setIsHovered] = useState(false);
-  const [selected, setSelected]   = useState<string | null>(null);
-  const [kept, setKept]           = useState(false);
-  const [showPrompt, setShowPrompt] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const counter = useRef(0);
+  const didDrag = useRef(false);
 
-  useEffect(() => {
-    document.body.style.cursor = kept && selected ? selected : "";
-    return () => { document.body.style.cursor = ""; };
-  }, [kept, selected]);
-
-  function handleSelect(value: string) {
-    setSelected(value);
-    setShowPrompt(true);
-    setKept(false);
+  function getPos(e: React.MouseEvent) {
+    const rect = cardRef.current!.getBoundingClientRect();
+    return { x: e.clientX - rect.left, y: e.clientY - rect.top };
   }
 
-  function handleKeep() { setKept(true); setShowPrompt(false); }
-
-  function handleReset() {
-    setKept(false);
-    setSelected(null);
-    setShowPrompt(false);
+  function burstSparks(x: number, y: number, count = 14) {
+    const newSparks: Spark[] = Array.from({ length: count }, (_, i) => {
+      const angle = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.6;
+      const dist = 28 + Math.random() * 45;
+      return {
+        id: ++counter.current,
+        x,
+        y,
+        dx: Math.cos(angle) * dist,
+        dy: Math.sin(angle) * dist,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+      };
+    });
+    setSparks(prev => [...prev, ...newSparks]);
+    const ids = new Set(newSparks.map(s => s.id));
+    setTimeout(() => setSparks(prev => prev.filter(s => !ids.has(s.id))), 700);
   }
 
-  const glowing = isHovered || kept;
+  function handleMouseDown(e: React.MouseEvent) {
+    e.preventDefault();
+    didDrag.current = false;
+    setIsDragging(true);
+    const pos = getPos(e);
+    setTrail([{ id: ++counter.current, ...pos, color: COLORS[0], idx: 0 }]);
+  }
+
+  function handleMouseMove(e: React.MouseEvent) {
+    if (!isDragging) return;
+    didDrag.current = true;
+    const pos = getPos(e);
+    const color = COLORS[counter.current % COLORS.length];
+    const newDot: TrailDot = { id: ++counter.current, ...pos, color, idx: counter.current };
+
+    if (Math.random() < 0.25) {
+      const angle = Math.random() * Math.PI * 2;
+      const dist = 6 + Math.random() * 14;
+      const mini: Spark = {
+        id: ++counter.current,
+        x: pos.x, y: pos.y,
+        dx: Math.cos(angle) * dist,
+        dy: Math.sin(angle) * dist,
+        color,
+      };
+      setSparks(prev => [...prev, mini]);
+      const id = mini.id;
+      setTimeout(() => setSparks(prev => prev.filter(s => s.id !== id)), 380);
+    }
+
+    setTrail(prev => {
+      const next = [...prev.slice(-50), newDot];
+      return next;
+    });
+  }
+
+  function handleMouseUp(e: React.MouseEvent) {
+    setIsDragging(false);
+    if (!didDrag.current) {
+      const pos = getPos(e);
+      burstSparks(pos.x, pos.y);
+    }
+    setTimeout(() => setTrail([]), 500);
+  }
+
+  function handleMouseLeave() {
+    setIsHovered(false);
+    setIsDragging(false);
+    setTimeout(() => setTrail([]), 350);
+  }
 
   return (
     <section className="py-16 flex justify-center" aria-label="Easter egg">
-      {/*
-        ONE wrapper covers both the card and the selector panel.
-        Mouse moving from card → buttons stays inside → no unwanted leave event.
-      */}
       <div
         className="flex flex-col items-center"
         onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => { if (!kept) setIsHovered(false); }}
-        style={{ cursor: selected && isHovered ? selected : "auto" }}
+        onMouseLeave={handleMouseLeave}
       >
-        {/* ── Card ───────────────────────────────────────────── */}
         <div
-          className="relative border-2 border-dashed rounded-2xl px-14 py-10 text-center overflow-hidden transition-all duration-500 select-none"
+          ref={cardRef}
+          className="relative border-2 border-dashed rounded-2xl px-14 py-10 text-center overflow-hidden transition-all duration-500 select-none cursor-crosshair"
           style={
-            glowing
+            isHovered
               ? {
                   borderColor: "rgba(96,165,250,0.7)",
                   boxShadow:
@@ -75,86 +113,49 @@ export function EasterEgg() {
                 }
               : { borderColor: "rgba(63,63,70,1)" }
           }
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
         >
-          {/* Smoke */}
-          {isHovered &&
-            PARTICLES.map((p, i) => (
-              <span
-                key={i}
-                className="smoke-particle"
-                style={{ left: p.left, width: p.w, height: p.h, animationDuration: p.dur, animationDelay: p.delay }}
-              />
-            ))}
+          {/* Trail */}
+          {trail.map((dot, i) => (
+            <span
+              key={dot.id}
+              className="pointer-events-none absolute rounded-full"
+              style={{
+                left: dot.x - 3,
+                top: dot.y - 3,
+                width: 6,
+                height: 6,
+                background: dot.color,
+                opacity: (i / trail.length) * 0.85,
+                boxShadow: `0 0 6px ${dot.color}, 0 0 14px ${dot.color}`,
+              }}
+            />
+          ))}
 
-          <div className={`relative z-10 transition-transform duration-300 ${glowing ? "scale-105" : ""}`}>
-            <div className="text-3xl mb-3">👾</div>
+          {/* Sparks */}
+          {sparks.map(spark => (
+            <span
+              key={spark.id}
+              className="spark-particle"
+              style={{
+                left: spark.x,
+                top: spark.y,
+                "--dx": `${spark.dx}px`,
+                "--dy": `${spark.dy}px`,
+                "--color": spark.color,
+              } as React.CSSProperties}
+            />
+          ))}
+
+          <div className={`relative z-10 transition-transform duration-300 ${isHovered ? "scale-105" : ""}`}>
+            <div className="text-3xl mb-3">⚡</div>
             <p className="text-white font-semibold text-lg mb-1">{t.title[lang]}</p>
             <p className={`text-sm transition-colors duration-300 ${isHovered ? "text-blue-400" : "text-zinc-500"}`}>
               {isHovered ? t.active[lang] : t.subtitle[lang]}
             </p>
           </div>
-        </div>
-
-        {/* ── Cursor selector panel ──────────────────────────── */}
-        <div
-          className={`mt-5 flex flex-col items-center gap-3 transition-all duration-300 ${
-            glowing ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2 pointer-events-none"
-          }`}
-        >
-          <p className="text-zinc-500 text-xs">{t.cursor_label[lang]}</p>
-
-          <div className="flex gap-2">
-            {CURSOR_OPTIONS.map((opt) => {
-              const node = i18n.egg[opt.labelKey];
-              const label = typeof node === "object" && "pt" in node ? node[lang] : "";
-              return (
-                <button
-                  key={opt.value}
-                  onMouseDown={(e) => {
-                    e.stopPropagation();
-                    handleSelect(opt.value);
-                  }}
-                  style={{ cursor: opt.value }}
-                  className={`px-3 py-2 rounded-lg text-xs border transition-all duration-150 ${
-                    selected === opt.value
-                      ? "border-blue-500 bg-blue-500/10 text-blue-400"
-                      : "border-zinc-700 text-zinc-400 hover:border-zinc-500 hover:text-zinc-200"
-                  }`}
-                >
-                  <span className="block text-base leading-none mb-1">{opt.emoji}</span>
-                  {label}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Keep / reset */}
-          {showPrompt && !kept && (
-            <div className="flex items-center gap-3">
-              <span className="text-zinc-500 text-xs">{t.keep_prompt[lang]}</span>
-              <button
-                onMouseDown={handleKeep}
-                className="px-3 py-1 rounded-md text-xs bg-blue-600 text-white hover:bg-blue-500 transition-colors"
-              >
-                {t.keep_yes[lang]}
-              </button>
-              <button
-                onMouseDown={handleReset}
-                className="px-3 py-1 rounded-md text-xs border border-zinc-700 text-zinc-400 hover:border-zinc-500 transition-all"
-              >
-                {t.keep_no[lang]}
-              </button>
-            </div>
-          )}
-
-          {kept && (
-            <div className="flex items-center gap-2">
-              <span className="text-zinc-600 text-xs">{t.locked[lang]}</span>
-              <button onMouseDown={handleReset} className="text-zinc-500 text-xs underline hover:text-zinc-300">
-                {t.reset[lang]}
-              </button>
-            </div>
-          )}
         </div>
       </div>
     </section>

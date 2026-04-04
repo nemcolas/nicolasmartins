@@ -31,8 +31,8 @@ export const i18n = {
       en: "Full-Stack Developer with product thinking.",
     },
     p1: {
-      pt: "Atualmente sou Desenvolvedor E-commerce na Prospirity, integrando ERPs (Tiny, Eccosys) ao Magento 2 — sincronizando produtos, estoque e pedidos para lojas de e-commerce. Antes disso, trabalhei por mais de um ano em uma software house desenvolvendo soluções Full-Stack e gerenciando requisitos técnicos de produtos digitais do zero ao deploy.",
-      en: "I currently work as an E-commerce Developer at Prospirity, integrating ERPs (Tiny, Eccosys) with Magento 2 — syncing products, inventory, and order flows for e-commerce stores. Before that, I spent over a year at a software house building Full-Stack solutions and managing the full technical requirements lifecycle from zero to deployment.",
+      pt: "Trabalho como Desenvolvedor E-commerce na Prospirity — desenvolvo ferramentas internas com Next.js, React e TypeScript, alem de fazer manutencao e integracoes de lojas com ERPs. Antes disso, passei cerca de um ano em uma software house onde alem de codar participava de reunioes com stakeholders, elaborava documentacao de produto e ajudava a definir escopo — algo proximo a um papel de PM tecnico.",
+      en: "I work as an E-commerce Developer at Prospirity — building internal tools with Next.js, React, and TypeScript alongside storefront maintenance and ERP integrations. Before that, I spent about a year at a software house where besides coding I joined stakeholder meetings, wrote product documentation, and helped define scope — something close to a technical PM role.",
     },
     p2: {
       pt: "Sou formado em Análise e Desenvolvimento de Sistemas pela FIAP e tenho certificações em Machine Learning (Coursera, Andrew Ng), Scrum e C#. Escrevo Python, TypeScript, Java e C# — e penso em sistemas, não só em features.",
@@ -42,8 +42,8 @@ export const i18n = {
     lang_en:    { pt: "🇺🇸 Inglês — Avançado",    en: "🇺🇸 English — Advanced" },
     stat1_val:  { pt: "2+",  en: "2+" },
     stat1_lbl:  { pt: "Anos na área de tech",   en: "Years in tech" },
-    stat2_val:  { pt: "5+",  en: "5+" },
-    stat2_lbl:  { pt: "Projetos entregues",      en: "Projects delivered" },
+    stat2_val:  { pt: "10+", en: "10+" },
+    stat2_lbl:  { pt: "Projetos entregues — de landing pages a apps mobile", en: "Projects delivered — from landing pages to mobile apps" },
     stat3_val:  { pt: "15+", en: "15+" },
     stat3_lbl:  { pt: "Tecnologias",             en: "Technologies" },
     stat4_val:  { pt: "ML",  en: "ML" },
@@ -106,22 +106,8 @@ export const i18n = {
 
   egg: {
     title:    { pt: "Sei fazer coisas maneiras", en: "I can make cool stuff" },
-    subtitle: { pt: "passe o mouse aqui ↑",      en: "hover here ↑" },
-    active:   { pt: "🔥 olha que legal!",        en: "🔥 hey, it works!" },
-    cursor_label:  { pt: "Escolha o comportamento do mouse:", en: "Pick a cursor style:" },
-    keep_prompt:   { pt: "Manter o mouse assim?",             en: "Keep this cursor?" },
-    keep_yes:      { pt: "Sim!",                              en: "Yes!" },
-    keep_no:       { pt: "Não",                               en: "No" },
-    locked:        { pt: "✓ Mantido!",                        en: "✓ Locked!" },
-    reset:         { pt: "resetar",                           en: "reset" },
-    cursor_normal:     { pt: "Normal",     en: "Normal" },
-    cursor_crosshair:  { pt: "Mira",       en: "Crosshair" },
-    cursor_zoom:       { pt: "Zoom",       en: "Zoom" },
-    cursor_grab:       { pt: "Agarrar",    en: "Grab" },
-    cursor_wait:       { pt: "Esperar",    en: "Wait" },
-    cursor_help:       { pt: "Ajuda",      en: "Help" },
-    cursor_text:       { pt: "Texto",      en: "Text" },
-    cursor_cell:       { pt: "Célula",     en: "Cell" },
+    subtitle: { pt: "clique ou arraste aqui ↑",  en: "click or drag here ↑" },
+    active:   { pt: "⚡ ta vendo?",              en: "⚡ see what I mean?" },
   },
 } as const;
 

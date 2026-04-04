@@ -18,6 +18,65 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "mise",
+    title: "Mise — Gestao de Fichas Tecnicas",
+    tagline: {
+      pt: "SaaS multi-tenant para restaurantes calcularem CMV, montarem fichas tecnicas e controlarem custos em tempo real.",
+      en: "Multi-tenant SaaS that lets restaurants calculate food cost, build technical sheets, and track margins in real time.",
+    },
+    tags: ["Next.js 15", "TypeScript", "Prisma", "PostgreSQL", "Clerk", "Stripe", "Tailwind", "shadcn/ui"],
+    featured: true,
+    status: "production",
+    github: "https://github.com/nemcolas/mise",
+    live: "https://mise-navy.vercel.app",
+    problem: {
+      pt: "Restaurantes perdem margem todo mês sem saber exatamente por que. O CMV fica na cabeca do chef ou numa planilha desatualizada — sem visibilidade real de custo por prato, sem controle de desperdício, sem como escalar esse processo pra uma equipe.",
+      en: "Restaurants bleed margin every month without knowing exactly why. Food cost lives in the chef's head or a stale spreadsheet — no real cost visibility per dish, no waste control, no way to scale that process across a team.",
+    },
+    solution: {
+      pt: "Um SaaS com modelo de 3 camadas: Materia Prima → Insumo → Prato. O custo é calculado em tempo real a cada render — nunca fica desatualizado no banco. Cada restaurante é um tenant isolado via Clerk Organizations, com controle de acesso por perfil. Plano gratuito funcional + upgrade via Stripe.",
+      en: "A SaaS with a 3-tier model: Raw Material → Prepared Item → Dish. Cost is calculated at runtime on every render — never stale in the database. Each restaurant is an isolated tenant via Clerk Organizations, with role-based access control. Functional free plan + Stripe-powered upgrades.",
+    },
+    decisions: [
+      {
+        pt: "Custo nunca armazenado no banco — calculado no runtime pra garantir que qualquer atualizacao de preco de insumo reflete instantaneamente em todos os pratos.",
+        en: "Cost never stored in the database — calculated at runtime so any ingredient price update reflects instantly across all dishes.",
+      },
+      {
+        pt: "Clerk Organizations como camada de multi-tenancy — isolamento de dados garantido sem precisar de schema separado por cliente.",
+        en: "Clerk Organizations as the multi-tenancy layer — data isolation guaranteed without needing separate schemas per client.",
+      },
+      {
+        pt: "Neon serverless PostgreSQL + Prisma — zero custo em idle, escala automaticamente, migrações versionadas.",
+        en: "Neon serverless PostgreSQL + Prisma — zero cost at idle, auto-scales, versioned migrations.",
+      },
+    ],
+    challenges: [
+      {
+        pt: "Garantir que colaboradores nunca vejam custo — enforced no nível da API, nao só no frontend.",
+        en: "Ensuring collaborators never see cost data — enforced at the API level, not just the frontend.",
+      },
+      {
+        pt: "Modelar os limites de plano (pratos, matérias-primas, usuários) sem poluir toda a camada de negócio com verificacoes.",
+        en: "Modeling plan limits (dishes, raw materials, users) without polluting the entire business layer with checks.",
+      },
+    ],
+    impact: [
+      {
+        pt: "Multi-tenant funcional: cada restaurante tem seus dados isolados com controle de perfis",
+        en: "Functional multi-tenancy: each restaurant has isolated data with role-based access",
+      },
+      {
+        pt: "Modelo freemium com Stripe: upgrade de plano sem sair do app",
+        en: "Freemium model with Stripe: plan upgrades without leaving the app",
+      },
+      {
+        pt: "Export de ficha tecnica em PDF — funcionalidade exclusiva do plano pago",
+        en: "PDF technical sheet export — paid-plan exclusive feature",
+      },
+    ],
+  },
+  {
     id: "cat-tracker",
     title: "PawTrack — Lost & Found Cats Map",
     tagline: {
@@ -143,7 +202,7 @@ export const projects: Project[] = [
     tags: ["Next.js 16", "TypeScript", "Tailwind CSS v4", "Static Export", "i18n", "Vercel"],
     featured: false,
     status: "production",
-    github: "https://github.com/nemcolas/nicolas-martins",
+    github: "https://github.com/nemcolas/nicolasmartins",
     problem: {
       pt: "A maioria dos portfólios de desenvolvedores júnior são genéricos, lentos e não passam no teste dos 10 segundos do recrutador.",
       en: "Most junior developer portfolios are generic, slow, and fail the 10-second recruiter scan.",

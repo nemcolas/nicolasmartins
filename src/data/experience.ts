@@ -22,12 +22,12 @@ export const experiences: Experience[] = [
     current: true,
     location: "São Paulo, SP",
     summary: {
-      pt: "Desenvolvimento e manutenção de aplicacoes de e-commerce — integrações com ERPs, desenvolvimento interno com Next.js/React/TypeScript e suporte a plataformas de loja.",
-      en: "Building and maintaining e-commerce applications — ERP integrations, internal tooling with Next.js/React/TypeScript, and storefront platform support.",
+      pt: "Desenvolvimento e manutenção de aplicacoes de e-commerce: integracoes com ERPs, ferramentas internas com Next.js/React/TypeScript e suporte a plataformas de loja.",
+      en: "Building and maintaining e-commerce applications: ERP integrations, internal tooling with Next.js/React/TypeScript, and storefront platform support.",
     },
     highlights: [
       {
-        pt: "Desenvolvo ferramentas internas com Next.js, React e TypeScript — dashboards, automações e fluxos operacionais.",
+        pt: "Desenvolvo ferramentas internas com Next.js, React e TypeScript, incluindo dashboards, automacoes e fluxos operacionais.",
         en: "Build internal tools with Next.js, React, and TypeScript — dashboards, automations, and operational workflows.",
       },
       {
@@ -35,11 +35,11 @@ export const experiences: Experience[] = [
         en: "Integrate ERPs (Tiny, Eccosys) with Magento 2 to sync products, inventory, and order flows for clients.",
       },
       {
-        pt: "Faço manutencao e customizacao de lojas Magento 2 — módulos, REST APIs e extensões.",
-        en: "Maintain and customize Magento 2 stores — modules, REST APIs, and custom extensions.",
+        pt: "Faco manutencao e customizacao de lojas Magento 2: modulos, REST APIs e extensoes.",
+        en: "Maintain and customize Magento 2 stores: modules, REST APIs, and custom extensions.",
       },
       {
-        pt: "Diagnostico e resolvo problemas de integração entre plataforma, ERP e sistemas terceiros.",
+        pt: "Diagnostico e resolvo problemas de integracao entre plataforma, ERP e sistemas terceiros.",
         en: "Diagnose and fix integration issues between storefront, ERP, and third-party systems.",
       },
     ],
@@ -55,24 +55,24 @@ export const experiences: Experience[] = [
     current: false,
     location: "São Paulo, SP",
     summary: {
-      pt: "Atuei no ciclo completo de produtos digitais — participava de reunioes com stakeholders, elaborava documentacao da aplicacao e desenvolvia as solucoes do zero ao deploy.",
-      en: "Owned the full lifecycle of digital products — from stakeholder meetings and product documentation to building and deploying the solutions.",
+      pt: "Atuei no ciclo completo de produtos digitais: participava de reunioes com stakeholders, elaborava documentacao da aplicacao e desenvolvia as solucoes do zero ao deploy.",
+      en: "Owned the full lifecycle of digital products: from stakeholder meetings and product documentation to building and deploying the solutions.",
     },
     highlights: [
       {
-        pt: "Participava ativamente de reunioes com stakeholders: levantamento de requisitos, alinhamento de escopo e priorizacao de backlog.",
+        pt: "Participava ativamente de reunioes com stakeholders para levantamento de requisitos, alinhamento de escopo e priorizacao de backlog.",
         en: "Active participant in stakeholder meetings: requirements gathering, scope alignment, and backlog prioritization.",
       },
       {
-        pt: "Elaborei documentacao tecnica completa de aplicacoes — UML, casos de uso, specs de API e fluxos de usuario.",
-        en: "Wrote full application documentation — UML, use cases, API specs, and user flows.",
+        pt: "Elaborei documentacao tecnica de aplicacoes: UML, casos de uso, specs de API e fluxos de usuario.",
+        en: "Wrote full application documentation: UML, use cases, API specs, and user flows.",
       },
       {
-        pt: "Desenvolvi solucoes Full-Stack web e mobile: landing pages, sistemas embarcados e apps escaláveis.",
+        pt: "Desenvolvi solucoes Full-Stack web e mobile, incluindo landing pages, sistemas embarcados e apps escaláveis.",
         en: "Built Full-Stack web and mobile solutions: landing pages, embedded systems, and scalable apps.",
       },
       {
-        pt: "Coordenei squads multidisciplinares conectando time técnico e necessidades de negócio.",
+        pt: "Coordenei squads multidisciplinares, conectando time tecnico e necessidades de negocio.",
         en: "Coordinated multidisciplinary squads bridging engineering and business requirements.",
       },
     ],
@@ -87,16 +87,16 @@ export const experiences: Experience[] = [
     current: false,
     location: "São Paulo, SP",
     summary: {
-      pt: "Gestão de equipe em ambiente de alta demanda — experiência que moldou minha visão de processos e liderança.",
+      pt: "Gestao de equipe em ambiente de alta demanda. Experiencia que moldou minha visao de processos e lideranca.",
       en: "Team management in a high-demand environment — experience that shaped my process and leadership thinking.",
     },
     highlights: [
       {
-        pt: "Padronização de processos operacionais e coordenação de equipe.",
+        pt: "Padronizacao de processos operacionais e coordenacao de equipe.",
         en: "Operational process standardization and team coordination.",
       },
       {
-        pt: "Desenvolvimento de habilidades de comunicação e gestão sob pressão.",
+        pt: "Desenvolvimento de habilidades de comunicacao e gestao sob pressao.",
         en: "Developed communication and pressure-management skills.",
       },
     ],

@@ -31,11 +31,11 @@ export const i18n = {
       en: "Full-Stack Developer with product thinking.",
     },
     p1: {
-      pt: "Trabalho como Desenvolvedor E-commerce na Prospirity — desenvolvo ferramentas internas com Next.js, React e TypeScript, alem de fazer manutencao e integracoes de lojas com ERPs. Antes disso, passei cerca de um ano em uma software house onde alem de codar participava de reunioes com stakeholders, elaborava documentacao de produto e ajudava a definir escopo — algo proximo a um papel de PM tecnico.",
+      pt: "Trabalho como Desenvolvedor E-commerce na Prospirity, desenvolvendo ferramentas internas com Next.js, React e TypeScript e tambem mantendo integracoes de lojas com ERPs. Antes disso, passei cerca de um ano em uma software house onde, alem de desenvolver, participava de reunioes com stakeholders, elaborava documentacao de produto e ajudava a definir o escopo dos projetos.",
       en: "I work as an E-commerce Developer at Prospirity — building internal tools with Next.js, React, and TypeScript alongside storefront maintenance and ERP integrations. Before that, I spent about a year at a software house where besides coding I joined stakeholder meetings, wrote product documentation, and helped define scope — something close to a technical PM role.",
     },
     p2: {
-      pt: "Sou formado em Análise e Desenvolvimento de Sistemas pela FIAP e tenho certificações em Machine Learning (Coursera, Andrew Ng), Scrum e C#. Escrevo Python, TypeScript, Java e C# — e penso em sistemas, não só em features.",
+      pt: "Formado em Analise e Desenvolvimento de Sistemas pela FIAP, com certificacoes em Machine Learning (Coursera, Andrew Ng), Scrum e C#. Trabalho principalmente com Python, TypeScript, Java e C#.",
       en: "I hold a Systems Analysis & Development degree from FIAP and certifications in Machine Learning (Coursera, Andrew Ng), Scrum, and C#. I write Python, TypeScript, Java, and C# — and I think in systems, not just features.",
     },
     lang_pt:    { pt: "🇧🇷 Português — Nativo",   en: "🇧🇷 Portuguese — Native" },
@@ -43,7 +43,7 @@ export const i18n = {
     stat1_val:  { pt: "2+",  en: "2+" },
     stat1_lbl:  { pt: "Anos na área de tech",   en: "Years in tech" },
     stat2_val:  { pt: "10+", en: "10+" },
-    stat2_lbl:  { pt: "Projetos entregues — de landing pages a apps mobile", en: "Projects delivered — from landing pages to mobile apps" },
+    stat2_lbl:  { pt: "Projetos entregues, de landing pages a apps mobile", en: "Projects delivered — from landing pages to mobile apps" },
     stat3_val:  { pt: "15+", en: "15+" },
     stat3_lbl:  { pt: "Tecnologias",             en: "Technologies" },
     stat4_val:  { pt: "ML",  en: "ML" },
@@ -94,7 +94,7 @@ export const i18n = {
     heading1: { pt: "Vamos construir", en: "Let's build" },
     heading2: { pt: "algo juntos.",    en: "something." },
     desc: {
-      pt: "Estou buscando oportunidades em desenvolvimento Full-Stack, E-commerce e ML — remoto ou São Paulo. Se você tem um problema interessante pra resolver, quero ouvir.",
+      pt: "Estou buscando oportunidades em Full-Stack, E-commerce e ML, remoto ou em Sao Paulo. Se voce tem um problema interessante pra resolver, me fala.",
       en: "I'm actively looking for Full-Stack, E-commerce, and ML engineering roles — remote or São Paulo-based. If you have an interesting problem to solve, I want to hear about it.",
     },
   },

@@ -15,7 +15,7 @@ export const experiences: Experience[] = [
   {
     company: "Prospirity",
     role: {
-      pt: "Desenvolvedor E-commerce",
+      pt: "Desenvolvedor Fullstack",
       en: "E-commerce Developer",
     },
     period: { pt: "Jan 2026 — Presente", en: "Jan 2026 — Present" },
@@ -27,7 +27,7 @@ export const experiences: Experience[] = [
     },
     highlights: [
       {
-        pt: "Desenvolvo ferramentas internas com Next.js, React e TypeScript, incluindo dashboards, automacoes e fluxos operacionais.",
+        pt: "Desenvolvo ferramentas internas com Next.js, React e TypeScript, incluindo dashboards, automações e fluxos operacionais.",
         en: "Build internal tools with Next.js, React, and TypeScript — dashboards, automations, and operational workflows.",
       },
       {
@@ -35,11 +35,11 @@ export const experiences: Experience[] = [
         en: "Integrate ERPs (Tiny, Eccosys) with Magento 2 to sync products, inventory, and order flows for clients.",
       },
       {
-        pt: "Faco manutencao e customizacao de lojas Magento 2: modulos, REST APIs e extensoes.",
+        pt: "Faco manutencao e customizacao de lojas Magento 2",
         en: "Maintain and customize Magento 2 stores: modules, REST APIs, and custom extensions.",
       },
       {
-        pt: "Diagnostico e resolvo problemas de integracao entre plataforma, ERP e sistemas terceiros.",
+        pt: "Diagnostico e resolvo problemas de integracao entre plataforma e ERP",
         en: "Diagnose and fix integration issues between storefront, ERP, and third-party systems.",
       },
     ],
@@ -48,7 +48,7 @@ export const experiences: Experience[] = [
   {
     company: "Software House",
     role: {
-      pt: "Desenvolvedor Full-Stack & Analista de Produto",
+      pt: "Analista de Requisitos e Desenvolvimento",
       en: "Full-Stack Developer & Product Analyst",
     },
     period: { pt: "Nov 2024 — Out 2025", en: "Nov 2024 — Oct 2025" },

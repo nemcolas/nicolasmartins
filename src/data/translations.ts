@@ -7,6 +7,7 @@ export const i18n = {
     experience: { pt: "Experiência", en: "Experience" },
     skills:     { pt: "Habilidades", en: "Skills" },
     projects:   { pt: "Projetos",    en: "Projects" },
+    ai:         { pt: "IA",          en: "AI" },
     contact:    { pt: "Contato",     en: "Contact" },
     hire:       { pt: "Me Contrate", en: "Hire Me" },
   },
@@ -75,10 +76,6 @@ export const i18n = {
   projects: {
     label:      { pt: "Projetos",       en: "Projects" },
     heading:    { pt: "O que construí", en: "What I've built" },
-    subtitle:   {
-      pt: "Cada projeto apresentado como estudo de caso: problema, solução, decisões e impacto.",
-      en: "Each project presented as a case study: problem, solution, decisions, and impact.",
-    },
     problem:    { pt: "Problema",  en: "Problem" },
     solution:   { pt: "Solução",   en: "Solution" },
     impact:     { pt: "Impacto",   en: "Impact" },
@@ -87,6 +84,27 @@ export const i18n = {
     production: { pt: "Produção",  en: "Production" },
     prototype:  { pt: "Protótipo", en: "Prototype" },
     wip:        { pt: "Em Progresso", en: "In Progress" },
+  },
+
+  ai: {
+    label:   { pt: "IA no dia a dia", en: "AI in practice" },
+    heading: { pt: "Como uso IA",     en: "How I use AI" },
+    body: {
+      pt: "Uso LLMs, crio agentes e automato partes do fluxo de trabalho. O que aprendi: o modelo amplifica o que voce ja tem. Requisito ruim produz codigo ruim mais rapido.",
+      en: "I use LLMs, build custom agents, and automate parts of my workflow. What I've learned: the model amplifies what you already have. Weak requirements just produce wrong code faster.",
+    },
+    p1: {
+      pt: "Antes de qualquer prompt, escrever historias de usuario e casos de uso claros. Quanto mais contexto estruturado, mais certeiro o modelo fica.",
+      en: "Before any prompt, write clear user stories and use cases. The more structured the context, the more precise the output.",
+    },
+    p2: {
+      pt: "Design patterns e principios de arquitetura continuam valendo. O modelo nao raciocina por voce, so executa melhor quando voce sabe o que esta pedindo.",
+      en: "Design patterns and architecture principles still apply. The model doesn't think for you, it just executes better when you know what you're asking.",
+    },
+    p3: {
+      pt: "Supervisao constante. Reviso tudo, porque o modelo nao conhece o contexto do projeto nem sabe o que nao pode mudar.",
+      en: "Constant supervision. I review everything, because the model doesn't know your project context or what it shouldn't touch.",
+    },
   },
 
   contact: {

@@ -1,9 +1,11 @@
 "use client";
 
-import { ExternalLink, Zap, Check } from "lucide-react";
+import { ExternalLink, Check } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { i18n } from "@/data/translations";
 import { projects } from "@/data/projects";
+import { MagicCard } from "@/components/MagicCard";
+import { useInView } from "@/hooks/useInView";
 
 function GitHubIcon() {
   return (
@@ -13,15 +15,16 @@ function GitHubIcon() {
   );
 }
 
+const STATUS_STYLES: Record<string, string> = {
+  production: "border-zinc-700 text-zinc-400",
+  prototype:  "border-zinc-700 text-zinc-500",
+  wip:        "border-zinc-800 text-zinc-600",
+};
+
 export function Projects() {
   const { lang } = useLanguage();
   const t = i18n.projects;
-
-  const STATUS_STYLES: Record<string, string> = {
-    production: "bg-green-500/10 border-green-500/20 text-green-400",
-    prototype:  "bg-yellow-500/10 border-yellow-500/20 text-yellow-400",
-    wip:        "bg-zinc-800 border-zinc-700 text-zinc-400",
-  };
+  const { ref: headerRef, inView: headerInView } = useInView();
 
   const statusLabel = (s: string) =>
     ({ production: t.production[lang], prototype: t.prototype[lang], wip: t.wip[lang] })[s] ?? s;
@@ -30,141 +33,182 @@ export function Projects() {
   const others   = projects.filter((p) => !p.featured);
 
   return (
-    <section id="projects" className="py-28 border-t border-zinc-800/50">
+    <section id="projects" className="py-28 border-t border-zinc-800/40">
       <div className="max-w-6xl mx-auto px-6">
-        <p className="text-xs font-mono text-blue-400 uppercase tracking-widest mb-4">
-          {t.label[lang]}
-        </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          {t.heading[lang]}
-        </h2>
-        <p className="text-zinc-500 mb-16 max-w-xl">{t.subtitle[lang]}</p>
 
-        <div className="space-y-6 mb-10">
+        {/* Header */}
+        <div
+          ref={headerRef}
+          className={`transition-all duration-700 ease-out mb-16 ${
+            headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <p className="text-xs font-mono text-zinc-500 uppercase tracking-widest mb-4">
+            {t.label[lang]}
+          </p>
+          <h2
+            className="text-3xl md:text-4xl text-white"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            {t.heading[lang]}
+          </h2>
+        </div>
+
+        {/* Featured projects */}
+        <div className="space-y-4 mb-10">
           {featured.map((project, i) => (
-            <article
-              key={project.id}
-              className="rounded-2xl bg-zinc-900/60 border border-zinc-800 hover:border-zinc-700 transition-colors overflow-hidden"
-            >
-              <div className="p-6 md:p-8 border-b border-zinc-800">
-                <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-zinc-600 text-sm">0{i + 1}</span>
-                    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md border text-xs font-medium ${STATUS_STYLES[project.status]}`}>
-                      {statusLabel(project.status)}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-700 hover:border-zinc-500 text-zinc-400 hover:text-white text-xs transition-all"
-                    >
-                      <GitHubIcon />
-                      {t.view_code[lang]}
-                    </a>
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs transition-colors"
-                      >
-                        <ExternalLink className="w-3.5 h-3.5" />
-                        {t.live_demo[lang]}
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{project.tagline[lang]}</p>
-
-                <div className="flex flex-wrap gap-2 mt-4">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="px-2.5 py-0.5 rounded-md bg-zinc-800 text-zinc-400 text-xs font-mono">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-zinc-800">
-                <div className="p-6 md:p-8">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-6 h-6 rounded-md bg-red-500/10 border border-red-500/20 flex items-center justify-center">
-                      <span className="text-red-400 text-xs font-bold">!</span>
-                    </div>
-                    <span className="text-xs font-mono text-red-400 uppercase tracking-wider">{t.problem[lang]}</span>
-                  </div>
-                  <p className="text-zinc-400 text-sm leading-relaxed">{project.problem[lang]}</p>
-                </div>
-
-                <div className="p-6 md:p-8">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-6 h-6 rounded-md bg-blue-500/10 border border-blue-500/20 flex items-center justify-center">
-                      <Zap className="w-3.5 h-3.5 text-blue-400" />
-                    </div>
-                    <span className="text-xs font-mono text-blue-400 uppercase tracking-wider">{t.solution[lang]}</span>
-                  </div>
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-4">{project.solution[lang]}</p>
-                  <ul className="space-y-2">
-                    {project.decisions.map((d) => (
-                      <li key={d[lang]} className="flex gap-2 text-xs text-zinc-500">
-                        <span className="text-blue-600 mt-0.5 flex-shrink-0">▸</span>
-                        {d[lang]}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="p-6 md:p-8">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-6 h-6 rounded-md bg-green-500/10 border border-green-500/20 flex items-center justify-center">
-                      <Check className="w-3.5 h-3.5 text-green-400" />
-                    </div>
-                    <span className="text-xs font-mono text-green-400 uppercase tracking-wider">{t.impact[lang]}</span>
-                  </div>
-                  <ul className="space-y-3">
-                    {project.impact.map((item) => (
-                      <li key={item[lang]} className="flex gap-2 text-sm text-zinc-400">
-                        <Check className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        {item[lang]}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </article>
+            <FeaturedCard key={project.id} project={project} index={i} lang={lang} t={t} statusLabel={statusLabel} />
           ))}
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {others.map((project) => (
-            <article
-              key={project.id}
-              className="p-6 rounded-xl bg-zinc-900/40 border border-zinc-800 hover:border-zinc-700 transition-colors"
-            >
-              <div className="flex items-center justify-between mb-3">
-                <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md border text-xs font-medium ${STATUS_STYLES[project.status]}`}>
-                  {statusLabel(project.status)}
-                </span>
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-white transition-colors" aria-label="GitHub">
-                  <GitHubIcon />
-                </a>
-              </div>
-              <h3 className="text-white font-semibold mb-1">{project.title}</h3>
-              <p className="text-zinc-500 text-sm leading-relaxed mb-4">{project.tagline[lang]}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.slice(0, 3).map((tag) => (
-                  <span key={tag} className="px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-500 text-xs font-mono">{tag}</span>
-                ))}
-              </div>
-            </article>
+        {/* Small cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {others.map((project, i) => (
+            <SmallCard key={project.id} project={project} index={i} lang={lang} t={t} statusLabel={statusLabel} />
           ))}
         </div>
+
       </div>
     </section>
+  );
+}
+
+function FeaturedCard({ project, index, lang, t, statusLabel }: any) {
+  const { ref, inView } = useInView();
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+      style={{ transitionDelay: inView ? `${index * 120}ms` : "0ms" }}
+    >
+      <MagicCard
+        tilt
+        className="rounded-2xl bg-zinc-900/30 border border-zinc-800/60 hover:border-zinc-700/50"
+      >
+        <div className="p-6 md:p-8 border-b border-zinc-800/50 relative z-[3]">
+          <div className="flex flex-wrap items-start justify-between gap-4 mb-5">
+            <div className="flex items-center gap-4">
+              <span
+                className="text-5xl text-zinc-800/70 leading-none select-none italic"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                0{index + 1}
+              </span>
+              <span className={`inline-flex items-center px-2 py-0.5 rounded-md border text-xs font-mono ${STATUS_STYLES[project.status]}`}>
+                {statusLabel(project.status)}
+              </span>
+            </div>
+            <div className="flex items-center gap-3">
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-zinc-800 hover:border-zinc-600 text-zinc-500 hover:text-zinc-300 text-xs font-mono transition-all"
+              >
+                <GitHubIcon />
+                {t.view_code[lang]}
+              </a>
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white hover:bg-zinc-100 text-zinc-900 text-xs font-mono transition-colors"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  {t.live_demo[lang]}
+                </a>
+              )}
+            </div>
+          </div>
+
+          <h3
+            className="text-2xl md:text-3xl text-white mb-2 leading-tight"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            {project.title}
+          </h3>
+          <p className="text-zinc-500 text-sm leading-relaxed">{project.tagline[lang]}</p>
+
+          <div className="flex flex-wrap gap-2 mt-4">
+            {project.tags.map((tag: string) => (
+              <span key={tag} className="px-2 py-0.5 rounded-md bg-zinc-900 border border-zinc-800/60 text-zinc-500 text-xs font-mono">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-zinc-800/40 relative z-[3]">
+          <div className="p-6 md:p-8">
+            <p className="text-xs font-mono text-zinc-700 uppercase tracking-widest mb-4">{t.problem[lang]}</p>
+            <p className="text-zinc-500 text-sm leading-relaxed">{project.problem[lang]}</p>
+          </div>
+          <div className="p-6 md:p-8">
+            <p className="text-xs font-mono text-zinc-700 uppercase tracking-widest mb-4">{t.solution[lang]}</p>
+            <p className="text-zinc-500 text-sm leading-relaxed mb-4">{project.solution[lang]}</p>
+            <ul className="space-y-2">
+              {project.decisions.map((d: any) => (
+                <li key={d[lang]} className="flex gap-2 text-xs text-zinc-600">
+                  <span className="text-zinc-700 mt-0.5 flex-shrink-0">▸</span>
+                  {d[lang]}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="p-6 md:p-8">
+            <p className="text-xs font-mono text-zinc-700 uppercase tracking-widest mb-4">{t.impact[lang]}</p>
+            <ul className="space-y-3">
+              {project.impact.map((item: any) => (
+                <li key={item[lang]} className="flex gap-2 text-sm text-zinc-500">
+                  <Check className="w-3.5 h-3.5 text-zinc-600 mt-0.5 flex-shrink-0" />
+                  {item[lang]}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </MagicCard>
+    </div>
+  );
+}
+
+function SmallCard({ project, index, lang, t, statusLabel }: any) {
+  const { ref, inView } = useInView();
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${
+        inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      }`}
+      style={{ transitionDelay: inView ? `${index * 80}ms` : "0ms" }}
+    >
+      <MagicCard className="p-6 rounded-xl bg-zinc-900/20 border border-zinc-800/50 hover:border-zinc-700/60 h-full">
+        <div className="flex items-center justify-between mb-4 relative z-[3]">
+          <span className={`inline-flex items-center px-2 py-0.5 rounded-md border text-xs font-mono ${STATUS_STYLES[project.status]}`}>
+            {statusLabel(project.status)}
+          </span>
+          <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-zinc-700 hover:text-zinc-400 transition-colors" aria-label="GitHub">
+            <GitHubIcon />
+          </a>
+        </div>
+        <h3
+          className="text-white text-lg mb-1 leading-tight relative z-[3]"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          {project.title}
+        </h3>
+        <p className="text-zinc-600 text-sm leading-relaxed mb-4 relative z-[3]">{project.tagline[lang]}</p>
+        <div className="flex flex-wrap gap-1.5 relative z-[3]">
+          {project.tags.slice(0, 3).map((tag: string) => (
+            <span key={tag} className="px-2 py-0.5 rounded-md bg-zinc-900 border border-zinc-800/60 text-zinc-600 text-xs font-mono">{tag}</span>
+          ))}
+        </div>
+      </MagicCard>
+    </div>
   );
 }

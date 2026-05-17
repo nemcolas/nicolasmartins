@@ -40,7 +40,7 @@ export const skillCategories: SkillCategory[] = [
 export const certifications = [
   {
     name: "Machine Learning Specialization",
-    issuer: "Coursera — Andrew Ng (DeepLearning.AI)",
+    issuer: "Coursera · Andrew Ng (DeepLearning.AI)",
     year: "2024",
   },
   {

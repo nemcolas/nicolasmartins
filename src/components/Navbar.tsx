@@ -16,8 +16,7 @@ export function Navbar() {
     { label: t.experience[lang],  href: "#experience" },
     { label: t.skills[lang],      href: "#skills" },
     { label: t.projects[lang],    href: "#projects" },
-    { label: t.automations[lang], href: "#automations" },
-    { label: t.ai[lang],          href: "#ai" },
+{ label: t.ai[lang],          href: "#ai" },
     { label: t.contact[lang],     href: "#contact" },
   ];
 

@@ -18,7 +18,7 @@ export const experiences: Experience[] = [
       pt: "Desenvolvedor Fullstack",
       en: "E-commerce Developer",
     },
-    period: { pt: "Jan 2026 — Presente", en: "Jan 2026 — Present" },
+    period: { pt: "Jan 2026 - Presente", en: "Jan 2026 - Present" },
     current: true,
     location: "São Paulo, SP",
     summary: {
@@ -31,8 +31,8 @@ export const experiences: Experience[] = [
         en: "Build Python automations that solve real operational problems: SKU divergence detection between Tiny ERP and Magento 2, product ABC curve, grid repositioning, and performance reports.",
       },
       {
-        pt: "Desenvolvo ferramentas internas com Next.js, React e TypeScript — dashboards operacionais e fluxos de gestão de catálogo.",
-        en: "Build internal tools with Next.js, React, and TypeScript — operational dashboards and catalog management workflows.",
+        pt: "Desenvolvo ferramentas internas com Next.js, React e TypeScript: dashboards operacionais e fluxos de gestão de catálogo.",
+        en: "Build internal tools with Next.js, React, and TypeScript: operational dashboards and catalog management workflows.",
       },
       {
         pt: "Integro ERPs (Tiny, Eccosys) ao Magento 2 via REST API para sincronizar produtos, estoque e pedidos.",
@@ -51,7 +51,7 @@ export const experiences: Experience[] = [
       pt: "Analista de Requisitos e Desenvolvimento",
       en: "Full-Stack Developer & Product Analyst",
     },
-    period: { pt: "Nov 2024 — Out 2025", en: "Nov 2024 — Oct 2025" },
+    period: { pt: "Nov 2024 - Out 2025", en: "Nov 2024 - Oct 2025" },
     current: false,
     location: "São Paulo, SP",
     summary: {
@@ -83,12 +83,12 @@ export const experiences: Experience[] = [
       pt: "Liderança Operacional",
       en: "Operations Lead",
     },
-    period: { pt: "Nov 2022 — Dez 2023", en: "Nov 2022 — Dec 2023" },
+    period: { pt: "Nov 2022 - Dez 2023", en: "Nov 2022 - Dec 2023" },
     current: false,
     location: "São Paulo, SP",
     summary: {
       pt: "Gestao de equipe em ambiente de alta demanda. Experiencia que moldou minha visao de processos e lideranca.",
-      en: "Team management in a high-demand environment — experience that shaped my process and leadership thinking.",
+      en: "Team management in a high-demand environment, an experience that shaped my process and leadership thinking.",
     },
     highlights: [
       {

@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nicolas Martins — Desenvolvedor Fullstack",
+  title: "Nicolas Martins | Desenvolvedor Fullstack",
   description:
     "Desenvolvedor Fullstack com experiência em SaaS, e-commerce (Magento 2) e automações operacionais. Trabalha com Next.js, React, TypeScript, Python e integrações com ERPs como Tiny e Eccosys.",
   keywords: [
@@ -48,14 +48,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Nicolas Martins — Desenvolvedor Fullstack",
+    title: "Nicolas Martins | Desenvolvedor Fullstack",
     description:
       "Desenvolvedor Fullstack especializado em e-commerce, automações operacionais e integrações com ERP.",
     siteName: "Nicolas Martins Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nicolas Martins — Desenvolvedor Fullstack",
+    title: "Nicolas Martins | Desenvolvedor Fullstack",
     description:
       "Desenvolvedor Fullstack especializado em e-commerce, automações operacionais e integrações com ERP.",
   },

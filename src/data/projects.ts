@@ -31,30 +31,30 @@ export const projects: Project[] = [
     live: "https://mise-navy.vercel.app",
     problem: {
       pt: "Restaurantes perdem margem todo mes sem saber exatamente por que. O CMV fica na cabeca do chef ou numa planilha desatualizada: sem visibilidade de custo por prato, sem controle de desperdicio, sem como escalar isso pra uma equipe.",
-      en: "Restaurants bleed margin every month without knowing exactly why. Food cost lives in the chef's head or a stale spreadsheet — no real cost visibility per dish, no waste control, no way to scale that process across a team.",
+      en: "Restaurants bleed margin every month without knowing exactly why. Food cost lives in the chef's head or a stale spreadsheet,no real cost visibility per dish, no waste control, no way to scale that process across a team.",
     },
     solution: {
       pt: "Um SaaS com modelo de 3 camadas: Materia Prima, Insumo e Prato. O custo e calculado em tempo real a cada render, nunca ficando desatualizado no banco. Cada restaurante e um tenant isolado via Clerk Organizations, com controle de acesso por perfil. Plano gratuito funcional com upgrade via Stripe.",
-      en: "A SaaS with a 3-tier model: Raw Material → Prepared Item → Dish. Cost is calculated at runtime on every render — never stale in the database. Each restaurant is an isolated tenant via Clerk Organizations, with role-based access control. Functional free plan + Stripe-powered upgrades.",
+      en: "A SaaS with a 3-tier model: Raw Material → Prepared Item → Dish. Cost is calculated at runtime on every render,never stale in the database. Each restaurant is an isolated tenant via Clerk Organizations, with role-based access control. Functional free plan + Stripe-powered upgrades.",
     },
     decisions: [
       {
         pt: "Custo nunca armazenado no banco. Calculado no runtime, qualquer atualizacao de preco de insumo reflete instantaneamente em todos os pratos.",
-        en: "Cost never stored in the database — calculated at runtime so any ingredient price update reflects instantly across all dishes.",
+        en: "Cost never stored in the database,calculated at runtime so any ingredient price update reflects instantly across all dishes.",
       },
       {
         pt: "Clerk Organizations como camada de multi-tenancy: isolamento de dados sem precisar de schema separado por cliente.",
-        en: "Clerk Organizations as the multi-tenancy layer — data isolation guaranteed without needing separate schemas per client.",
+        en: "Clerk Organizations as the multi-tenancy layer,data isolation guaranteed without needing separate schemas per client.",
       },
       {
         pt: "Neon serverless PostgreSQL com Prisma: zero custo em idle, escala automaticamente, migracoes versionadas.",
-        en: "Neon serverless PostgreSQL + Prisma — zero cost at idle, auto-scales, versioned migrations.",
+        en: "Neon serverless PostgreSQL + Prisma,zero cost at idle, auto-scales, versioned migrations.",
       },
     ],
     challenges: [
       {
         pt: "Garantir que colaboradores nunca vejam dados de custo, com validacao aplicada no nivel da API, nao so no frontend.",
-        en: "Ensuring collaborators never see cost data — enforced at the API level, not just the frontend.",
+        en: "Ensuring collaborators never see cost data,enforced at the API level, not just the frontend.",
       },
       {
         pt: "Modelar os limites de plano (pratos, materias-primas, usuarios) sem poluir toda a camada de negocio com verificacoes.",
@@ -72,7 +72,7 @@ export const projects: Project[] = [
       },
       {
         pt: "Export de ficha tecnica em PDF, exclusivo do plano pago",
-        en: "PDF technical sheet export — paid-plan exclusive feature",
+        en: "PDF technical sheet export,paid-plan exclusive feature",
       },
     ],
   },
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     github: "https://github.com/nemcolas/cat-tracker-pixel",
     problem: {
       pt: "Adocao de gatos e notoriamente mais dificil que a de caes, mas nao existe uma ferramenta simples e colaborativa para reportar gatos perdidos ou encontrados. As plataformas existentes sao genericas demais ou dificeis de usar. Gatos mais velhos e com necessidades especiais ficam invisiveis.",
-      en: "Cat adoption is notoriously harder than dogs — yet there's no simple, community-driven tool to report lost or found cats. Existing platforms are either too broad or clunky. Older and special-needs cats have the worst adoption rates because awareness doesn't reach the right people.",
+      en: "Cat adoption is notoriously harder than dogs,yet there's no simple, community-driven tool to report lost or found cats. Existing platforms are either too broad or clunky. Older and special-needs cats have the worst adoption rates because awareness doesn't reach the right people.",
     },
     solution: {
       pt: "Um app mobile em pixel art onde qualquer pessoa pode marcar um ponto no mapa reportando um gato perdido ou encontrado, adicionar foto e descricao, e explorar os reportes proximos. Uma tela de recursos lista organizacoes de adocao. A estetica retro cria uma identidade memoravel.",
@@ -102,11 +102,11 @@ export const projects: Project[] = [
       },
       {
         pt: "JSON Server como mock de REST API desde o inicio, mantendo o contrato limpo para migrar ao backend real sem reescrever o cliente.",
-        en: "JSON Server as mock REST API from day one — keeping the client contract clean for backend migration without rewriting the app.",
+        en: "JSON Server as mock REST API from day one,keeping the client contract clean for backend migration without rewriting the app.",
       },
       {
         pt: "URL da API via variavel de ambiente (EXPO_PUBLIC_API_URL), sem IPs hardcoded no codigo-fonte.",
-        en: "API URL via environment variable (EXPO_PUBLIC_API_URL) — no hardcoded IPs in source code.",
+        en: "API URL via environment variable (EXPO_PUBLIC_API_URL),no hardcoded IPs in source code.",
       },
     ],
     challenges: [
@@ -130,7 +130,7 @@ export const projects: Project[] = [
       },
       {
         pt: "APK buildavel via `eas build --platform android`, sem precisar de Mac",
-        en: "APK buildable via `eas build --platform android` — no Mac required",
+        en: "APK buildable via `eas build --platform android`,no Mac required",
       },
     ],
   },
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     title: "Blue Future: Plastic Waste Intelligence",
     tagline: {
       pt: "Notebooks Jupyter transformados em dashboard web interativo, tornando dados ambientais acessiveis a qualquer pessoa.",
-      en: "Jupyter notebooks transformed into an interactive web dashboard — environmental data accessible to everyone.",
+      en: "Jupyter notebooks transformed into an interactive web dashboard,environmental data accessible to everyone.",
     },
     tags: ["Python", "Pandas", "Scikit-learn", "Next.js", "Recharts", "TypeScript", "Data Viz"],
     featured: true,
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     live: "https://gsia-dashboard.vercel.app",
     problem: {
       pt: "A producao global de plastico cresceu de 2M toneladas em 1950 para 460M em 2019, mas esses dados ficam presos em CSVs academicos e notebooks que ninguem fora do meio tecnico consegue usar. A analise existia; o produto nao.",
-      en: "Global plastic production grew from 2M tons in 1950 to 460M tons in 2019 — but this data lives in academic CSVs and Jupyter notebooks that sustainability decision-makers can't use. The analysis existed; a product did not.",
+      en: "Global plastic production grew from 2M tons in 1950 to 460M tons in 2019,but this data lives in academic CSVs and Jupyter notebooks that sustainability decision-makers can't use. The analysis existed; a product did not.",
     },
     solution: {
       pt: "Transformei um projeto de ciencia de dados em Python/scikit-learn num dashboard Next.js interativo. Um script de pre-processamento converte os CSVs originais em JSON. O dashboard mostra tendencias de producao, residuos per capita por pais, metodos de descarte e os resultados do modelo de Regressao Linear.",
@@ -157,11 +157,11 @@ export const projects: Project[] = [
     decisions: [
       {
         pt: "Pre-processamento dos CSVs para JSON estatico no build: zero custo de servidor e carregamento instantaneo.",
-        en: "Pre-process CSVs to static JSON at build time — zero server costs, instant page loads.",
+        en: "Pre-process CSVs to static JSON at build time,zero server costs, instant page loads.",
       },
       {
         pt: "Recharts em vez de D3: API mais simples, totalmente React, sem manipulacao imperativa do DOM.",
-        en: "Recharts over D3 — simpler API, fully React-native, no D3 imperative DOM manipulation.",
+        en: "Recharts over D3,simpler API, fully React-native, no D3 imperative DOM manipulation.",
       },
       {
         pt: "Mantive os notebooks originais no repositorio e tornei o pipeline reproduzivel com dependencias fixadas.",
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     impact: [
       {
         pt: "Analise de dados acessivel a qualquer pessoa, sem precisar de Python",
-        en: "Notebook analysis accessible to non-technical users — no Python required",
+        en: "Notebook analysis accessible to non-technical users,no Python required",
       },
       {
         pt: "Dashboard carrega em menos de 1s (JSON estatico, sem chamadas de API no render)",
@@ -219,11 +219,11 @@ export const projects: Project[] = [
       },
       {
         pt: "Todo o conteudo em arquivos de dados tipados, com separacao total entre dados e UI.",
-        en: "All content in typed data files — complete separation between data and UI.",
+        en: "All content in typed data files,complete separation between data and UI.",
       },
       {
         pt: "Sem bibliotecas de animacao, so CSS transitions para manter o bundle minimo.",
-        en: "No animation libraries — CSS transitions only to keep the bundle tiny.",
+        en: "No animation libraries,CSS transitions only to keep the bundle tiny.",
       },
     ],
     challenges: [],
@@ -234,7 +234,7 @@ export const projects: Project[] = [
       },
       {
         pt: "i18n pt-BR/en com um clique, sem reload de pagina",
-        en: "pt-BR/en i18n with one click — no page reload",
+        en: "pt-BR/en i18n with one click,no page reload",
       },
     ],
   },

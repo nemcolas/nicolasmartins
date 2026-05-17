@@ -27,23 +27,23 @@ export const experiences: Experience[] = [
     },
     highlights: [
       {
-        pt: "Desenvolvo ferramentas internas com Next.js, React e TypeScript, incluindo dashboards, automações e fluxos operacionais.",
-        en: "Build internal tools with Next.js, React, and TypeScript — dashboards, automations, and operational workflows.",
+        pt: "Crio automações em Python que resolvem problemas reais de operação: detecção de divergência de SKU entre Tiny ERP e Magento 2, curva ABC de produtos, reposicionamento de grade e relatórios de performance.",
+        en: "Build Python automations that solve real operational problems: SKU divergence detection between Tiny ERP and Magento 2, product ABC curve, grid repositioning, and performance reports.",
       },
       {
-        pt: "Integro ERPs (Tiny, Eccosys) ao Magento 2 para sincronizar produtos, estoque e pedidos dos clientes.",
-        en: "Integrate ERPs (Tiny, Eccosys) with Magento 2 to sync products, inventory, and order flows for clients.",
+        pt: "Desenvolvo ferramentas internas com Next.js, React e TypeScript — dashboards operacionais e fluxos de gestão de catálogo.",
+        en: "Build internal tools with Next.js, React, and TypeScript — operational dashboards and catalog management workflows.",
       },
       {
-        pt: "Faco manutencao e customizacao de lojas Magento 2",
+        pt: "Integro ERPs (Tiny, Eccosys) ao Magento 2 via REST API para sincronizar produtos, estoque e pedidos.",
+        en: "Integrate ERPs (Tiny, Eccosys) with Magento 2 via REST API to sync products, inventory, and order flows.",
+      },
+      {
+        pt: "Faço manutenção e customização de lojas Magento 2: módulos, APIs e extensões sob medida.",
         en: "Maintain and customize Magento 2 stores: modules, REST APIs, and custom extensions.",
       },
-      {
-        pt: "Diagnostico e resolvo problemas de integracao entre plataforma e ERP",
-        en: "Diagnose and fix integration issues between storefront, ERP, and third-party systems.",
-      },
     ],
-    tags: ["Next.js", "React", "TypeScript", "Magento 2", "PHP", "REST API", "E-commerce"],
+    tags: ["Next.js", "React", "TypeScript", "Python", "Magento 2", "Tiny ERP", "REST API"],
   },
   {
     company: "Software House",

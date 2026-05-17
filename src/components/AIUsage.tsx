@@ -29,7 +29,6 @@ export function AIUsage() {
             </p>
             <h2
               className="text-4xl md:text-5xl text-white leading-[1.05]"
-              style={{ fontFamily: "var(--font-display)" }}
             >
               {t.heading[lang]}
             </h2>
@@ -51,8 +50,7 @@ export function AIUsage() {
             >
               <span
                 className="text-2xl text-zinc-800 leading-none italic pt-0.5 select-none"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
+                >
                 0{i + 1}
               </span>
               <p className="text-zinc-500 leading-relaxed text-[15px]">{p[lang]}</p>

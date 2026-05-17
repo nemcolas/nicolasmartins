@@ -34,7 +34,6 @@ export function About() {
             </p>
             <h2
               className="text-3xl md:text-4xl text-white mb-8 leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
             >
               {t.heading[lang]}
             </h2>
@@ -70,8 +69,7 @@ export function About() {
                 >
                   <span
                     className="text-4xl text-white w-16 flex-shrink-0 leading-none"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
+                        >
                     {stat.value}
                   </span>
                   <span className="text-sm text-zinc-500 leading-snug">{stat.label}</span>

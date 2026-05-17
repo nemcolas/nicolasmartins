@@ -1,40 +1,42 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Space_Grotesk, Silkscreen, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const silkscreen = Silkscreen({
+  variable: "--font-pixel",
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   subsets: ["latin"],
-});
-
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
-  title: "Nicolas Martins — Full-Stack Engineer",
+  title: "Nicolas Martins — Desenvolvedor Fullstack",
   description:
-    "Full-Stack Engineer and Requirements Analyst based in São Paulo. Experienced with React, Next.js, Node.js, Spring Boot, Python, and Machine Learning. Open to remote opportunities.",
+    "Desenvolvedor Fullstack com experiência em SaaS, e-commerce (Magento 2) e automações operacionais. Trabalha com Next.js, React, TypeScript, Python e integrações com ERPs como Tiny e Eccosys.",
   keywords: [
+    "Fullstack Developer",
     "Full-Stack Developer",
-    "Full-Stack Engineer",
-    "Junior Developer",
     "React Developer",
     "Next.js Developer",
     "Node.js Developer",
     "Python Developer",
-    "Java Developer",
-    "Spring Boot",
     "TypeScript",
+    "Magento 2",
+    "E-commerce Developer",
+    "ERP Integration",
+    "Tiny ERP",
+    "Automação",
     "Machine Learning",
     "São Paulo",
     "Remote Developer",
@@ -46,16 +48,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Nicolas Martins — Full-Stack Engineer",
+    title: "Nicolas Martins — Desenvolvedor Fullstack",
     description:
-      "Full-Stack Engineer who ships scalable software and bridges business requirements to production code.",
+      "Desenvolvedor Fullstack especializado em e-commerce, automações operacionais e integrações com ERP.",
     siteName: "Nicolas Martins Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nicolas Martins — Full-Stack Engineer",
+    title: "Nicolas Martins — Desenvolvedor Fullstack",
     description:
-      "Full-Stack Engineer who ships scalable software and bridges business requirements to production code.",
+      "Desenvolvedor Fullstack especializado em e-commerce, automações operacionais e integrações com ERP.",
   },
   robots: {
     index: true,
@@ -71,7 +73,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
+      className={`${spaceGrotesk.variable} ${silkscreen.variable} ${geistMono.variable}`}
     >
       <body className="bg-[#080808] text-zinc-100 antialiased">
         {/* Film grain overlay */}

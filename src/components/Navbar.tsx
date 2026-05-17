@@ -12,12 +12,13 @@ export function Navbar() {
   const t = i18n.nav;
 
   const NAV_LINKS = [
-    { label: t.about[lang],      href: "#about" },
-    { label: t.experience[lang], href: "#experience" },
-    { label: t.skills[lang],     href: "#skills" },
-    { label: t.projects[lang],   href: "#projects" },
-    { label: t.ai[lang],         href: "#ai" },
-    { label: t.contact[lang],    href: "#contact" },
+    { label: t.about[lang],       href: "#about" },
+    { label: t.experience[lang],  href: "#experience" },
+    { label: t.skills[lang],      href: "#skills" },
+    { label: t.projects[lang],    href: "#projects" },
+    { label: t.automations[lang], href: "#automations" },
+    { label: t.ai[lang],          href: "#ai" },
+    { label: t.contact[lang],     href: "#contact" },
   ];
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export function Navbar() {
         <a
           href="#"
           className="font-mono text-base text-zinc-400 hover:text-white transition-colors tracking-tight"
-          style={{ fontFamily: "var(--font-display)", fontStyle: "italic" }}
+          style={{ fontFamily: "var(--font-pixel)" }}
         >
           nm.
         </a>

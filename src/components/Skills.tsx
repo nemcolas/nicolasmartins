@@ -1,6 +1,6 @@
 "use client";
 
-import { Monitor, Server, Code2, BarChart2, Database, Cloud, Award } from "lucide-react";
+import { Monitor, Server, Code2, BarChart2, Database, Cloud, Award, ShoppingBag } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { i18n } from "@/data/translations";
 import { certifications } from "@/data/skills";
@@ -8,7 +8,8 @@ import { useInView } from "@/hooks/useInView";
 
 const CATEGORIES = [
   { key: "cat_frontend" as const, icon: <Monitor className="w-3.5 h-3.5" />, skills: ["React.js", "Next.js", "TypeScript", "HTML5", "CSS3", "Tailwind CSS"] },
-  { key: "cat_backend" as const, icon: <Server className="w-3.5 h-3.5" />, skills: ["Node.js", "NestJS", "Spring Boot", "Magento 2", "REST APIs", "Swagger"] },
+  { key: "cat_backend" as const, icon: <Server className="w-3.5 h-3.5" />, skills: ["Node.js", "NestJS", "Spring Boot", "REST APIs", "Swagger"] },
+  { key: "cat_ecommerce" as const, icon: <ShoppingBag className="w-3.5 h-3.5" />, skills: ["Magento 2", "Tiny ERP", "Eccosys", "PHP", "Python Scripts"] },
   { key: "cat_languages" as const, icon: <Code2 className="w-3.5 h-3.5" />, skills: ["TypeScript", "Python", "Java", "C#", "PHP"] },
   { key: "cat_data" as const, icon: <BarChart2 className="w-3.5 h-3.5" />, skills: ["Pandas", "Scikit-learn", "PyTorch", "Matplotlib", "Jupyter"] },
   { key: "cat_databases" as const, icon: <Database className="w-3.5 h-3.5" />, skills: ["PostgreSQL", "MongoDB", "MySQL", "Oracle", "Prisma ORM"] },
@@ -37,7 +38,6 @@ export function Skills() {
           </p>
           <h2
             className="text-3xl md:text-4xl text-white"
-            style={{ fontFamily: "var(--font-display)" }}
           >
             {t.heading[lang]}
           </h2>

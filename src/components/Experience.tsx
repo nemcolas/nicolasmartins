@@ -36,7 +36,6 @@ function ExpItem({ exp, index }: { exp: any; index: number }) {
           <div>
             <h3
               className="text-xl text-white leading-tight"
-              style={{ fontFamily: "var(--font-display)" }}
             >
               {exp.role[lang]}
             </h3>

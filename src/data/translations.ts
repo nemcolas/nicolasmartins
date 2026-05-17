@@ -3,41 +3,43 @@ export type BiStr = { pt: string; en: string };
 
 export const i18n = {
   nav: {
-    about:      { pt: "Sobre",       en: "About" },
-    experience: { pt: "Experiência", en: "Experience" },
-    skills:     { pt: "Habilidades", en: "Skills" },
-    projects:   { pt: "Projetos",    en: "Projects" },
-    ai:         { pt: "IA",          en: "AI" },
-    contact:    { pt: "Contato",     en: "Contact" },
-    hire:       { pt: "Me Contrate", en: "Hire Me" },
+    about:        { pt: "Sobre",        en: "About" },
+    experience:   { pt: "Experiência",  en: "Experience" },
+    skills:       { pt: "Habilidades",  en: "Skills" },
+    projects:     { pt: "Projetos",     en: "Projects" },
+    automations:  { pt: "Automações",   en: "Automations" },
+    ai:           { pt: "IA",           en: "AI" },
+    contact:      { pt: "Contato",      en: "Contact" },
+    hire:         { pt: "Me Contrate",  en: "Hire Me" },
   },
 
   hero: {
-    available:    { pt: "Disponível para oportunidades",                   en: "Available for opportunities" },
-    role:         { pt: "Desenvolvedor Full-Stack & E-commerce",            en: "Full-Stack & E-commerce Developer" },
+    available:    { pt: "Disponível para oportunidades",    en: "Available for opportunities" },
+    role:         { pt: "Desenvolvedor Fullstack",          en: "Fullstack Developer" },
     description:  {
-      pt: "Construo integrações de sistemas, desenvolvo produtos digitais e entrego código que vai pra produção. Aberto a oportunidades em Full-Stack, E-commerce e ML.",
-      en: "I build system integrations, develop digital products, and write code that ships to production. Open to Full-Stack, E-commerce, and ML opportunities.",
+      pt: "Construo produtos completos — do front ao banco de dados. Tenho experiência com SaaS, mobile e e-commerce. Atualmente trabalho com Magento 2, integrações com ERP e automações que resolvem problemas reais de operação.",
+      en: "I build complete products — from frontend to database. I have experience with SaaS, mobile, and e-commerce. Currently working with Magento 2, ERP integrations, and automations that solve real operational problems.",
     },
-    cta_projects: { pt: "Ver Projetos",        en: "View Projects" },
-    cta_contact:  { pt: "Entrar em Contato",   en: "Get in Touch" },
-    cta_github:   { pt: "GitHub",              en: "GitHub" },
+    cta_projects: { pt: "Ver Projetos",       en: "View Projects" },
+    cta_contact:  { pt: "Entrar em Contato",  en: "Get in Touch" },
+    cta_github:   { pt: "GitHub",             en: "GitHub" },
+    cta_cv:       { pt: "Baixar CV",          en: "Download CV" },
     location:     { pt: "São Paulo, SP · Brasil → Remoto", en: "São Paulo, SP · Brazil → Remote" },
   },
 
   about: {
     label:   { pt: "Sobre",   en: "About" },
     heading: {
-      pt: "Desenvolvedor Full-Stack com visão de produto.",
-      en: "Full-Stack Developer with product thinking.",
+      pt: "Desenvolvedor que entende o negócio, não só o código.",
+      en: "Developer who understands the business, not just the code.",
     },
     p1: {
-      pt: "Trabalho como Desenvolvedor E-commerce na Prospirity, desenvolvendo ferramentas internas com Next.js, React e TypeScript e tambem mantendo integracoes de lojas com ERPs. Antes disso, passei cerca de um ano em uma software house onde, alem de desenvolver, participava de reunioes com stakeholders, elaborava documentacao de produto e ajudava a definir o escopo dos projetos.",
-      en: "I work as an E-commerce Developer at Prospirity — building internal tools with Next.js, React, and TypeScript alongside storefront maintenance and ERP integrations. Before that, I spent about a year at a software house where besides coding I joined stakeholder meetings, wrote product documentation, and helped define scope — something close to a technical PM role.",
+      pt: "Trabalho como Desenvolvedor Fullstack na Prospirity — construo ferramentas internas com Next.js, React e TypeScript, faço integrações entre e-commerce e ERPs, e crio automações que resolvem problemas reais de operação: controle de estoque, curva ABC, reposicionamento de grade de produtos.",
+      en: "I work as a Fullstack Developer at Prospirity — building internal tools with Next.js, React, and TypeScript, integrating e-commerce platforms with ERPs, and creating automations that solve real operational problems: inventory control, ABC curve analysis, product grid repositioning.",
     },
     p2: {
-      pt: "Formado em Analise e Desenvolvimento de Sistemas pela FIAP, com certificacoes em Machine Learning (Coursera, Andrew Ng), Scrum e C#. Trabalho principalmente com Python, TypeScript, Java e C#.",
-      en: "I hold a Systems Analysis & Development degree from FIAP and certifications in Machine Learning (Coursera, Andrew Ng), Scrum, and C#. I write Python, TypeScript, Java, and C# — and I think in systems, not just features.",
+      pt: "Antes disso, passei um ano numa software house onde fui além do código: participei de reuniões com stakeholders, escrevi documentação de produto, defini escopo e coordenei squads. Formado em Análise e Desenvolvimento de Sistemas pela FIAP, com certificação em Machine Learning pelo Coursera (Andrew Ng).",
+      en: "Before that, I spent a year at a software house where I went beyond code: stakeholder meetings, product documentation, scope definition, squad coordination. Systems Analysis degree from FIAP, Machine Learning certification from Coursera (Andrew Ng).",
     },
     lang_pt:    { pt: "🇧🇷 Português — Nativo",   en: "🇧🇷 Portuguese — Native" },
     lang_en:    { pt: "🇺🇸 Inglês — Avançado",    en: "🇺🇸 English — Advanced" },
@@ -62,15 +64,16 @@ export const i18n = {
   },
 
   skills: {
-    label:          { pt: "Habilidades",        en: "Skills" },
-    heading:        { pt: "Com o que trabalho", en: "What I work with" },
-    certs_heading:  { pt: "Certificações",       en: "Certifications" },
-    cat_frontend:   { pt: "Front-end",           en: "Frontend" },
-    cat_backend:    { pt: "Back-end",            en: "Backend" },
-    cat_languages:  { pt: "Linguagens",          en: "Languages" },
-    cat_data:       { pt: "Dados & ML",          en: "Data & ML" },
-    cat_databases:  { pt: "Bancos de Dados",     en: "Databases" },
-    cat_devops:     { pt: "DevOps & Cloud",      en: "DevOps & Cloud" },
+    label:          { pt: "Habilidades",              en: "Skills" },
+    heading:        { pt: "Com o que trabalho",       en: "What I work with" },
+    certs_heading:  { pt: "Certificações",             en: "Certifications" },
+    cat_frontend:   { pt: "Front-end",                en: "Frontend" },
+    cat_backend:    { pt: "Back-end",                 en: "Backend" },
+    cat_ecommerce:  { pt: "E-commerce & Integrações", en: "E-commerce & Integrations" },
+    cat_languages:  { pt: "Linguagens",               en: "Languages" },
+    cat_data:       { pt: "Dados & ML",               en: "Data & ML" },
+    cat_databases:  { pt: "Bancos de Dados",          en: "Databases" },
+    cat_devops:     { pt: "DevOps & Cloud",           en: "DevOps & Cloud" },
   },
 
   projects: {
@@ -86,24 +89,34 @@ export const i18n = {
     wip:        { pt: "Em Progresso", en: "In Progress" },
   },
 
+  automations: {
+    label:   { pt: "Automações",                      en: "Automations" },
+    heading: { pt: "Scripts que estão em produção",   en: "Scripts running in production" },
+    sub: {
+      pt: "Automações criadas no trabalho atual — não estão no GitHub, mas resolvem problemas reais de operação de e-commerce todo dia.",
+      en: "Automations built at my current job — not on GitHub, but solving real e-commerce operational problems every day.",
+    },
+    note: { pt: "detalhes disponíveis em entrevista", en: "details available in interview" },
+  },
+
   ai: {
     label:   { pt: "IA no dia a dia", en: "AI in practice" },
     heading: { pt: "Como uso IA",     en: "How I use AI" },
     body: {
-      pt: "Uso LLMs, crio agentes e automato partes do fluxo de trabalho. O que aprendi: o modelo amplifica o que voce ja tem. Requisito ruim produz codigo ruim mais rapido.",
-      en: "I use LLMs, build custom agents, and automate parts of my workflow. What I've learned: the model amplifies what you already have. Weak requirements just produce wrong code faster.",
+      pt: "Uso IA no dia a dia — pro código, pra pensar soluções, pra automatizar o repetitivo. O que aprendi é que o modelo amplifica o que você já tem: sem clareza sobre o problema, ele só produz confusão mais rápido.",
+      en: "I use AI daily — for code, for thinking through solutions, for automating repetitive work. What I've learned: the model amplifies what you already have. Without clarity on the problem, it just produces confusion faster.",
     },
     p1: {
-      pt: "Antes de qualquer prompt, escrever historias de usuario e casos de uso claros. Quanto mais contexto estruturado, mais certeiro o modelo fica.",
-      en: "Before any prompt, write clear user stories and use cases. The more structured the context, the more precise the output.",
+      pt: "Contexto bem escrito vale mais que prompt engenharia mirabolante. Uma história de usuário clara produz código melhor que uma instrução genérica.",
+      en: "Well-written context beats elaborate prompt engineering. A clear user story produces better code than a vague instruction.",
     },
     p2: {
-      pt: "Design patterns e principios de arquitetura continuam valendo. O modelo nao raciocina por voce, so executa melhor quando voce sabe o que esta pedindo.",
-      en: "Design patterns and architecture principles still apply. The model doesn't think for you, it just executes better when you know what you're asking.",
+      pt: "Boas práticas de engenharia continuam valendo. O modelo não raciocina sobre arquitetura por você — ele executa melhor quando você já sabe o que está pedindo.",
+      en: "Good engineering practices still apply. The model doesn't think about architecture for you — it executes better when you already know what you're asking.",
     },
     p3: {
-      pt: "Supervisao constante. Reviso tudo, porque o modelo nao conhece o contexto do projeto nem sabe o que nao pode mudar.",
-      en: "Constant supervision. I review everything, because the model doesn't know your project context or what it shouldn't touch.",
+      pt: "Supervisão é obrigatória. Reviso tudo que gera, porque o modelo não conhece o contexto do projeto, as restrições de negócio nem o que não pode ser tocado.",
+      en: "Supervision is mandatory. I review everything it generates, because the model doesn't know the project context, business constraints, or what shouldn't be touched.",
     },
   },
 
@@ -112,8 +125,8 @@ export const i18n = {
     heading1: { pt: "Vamos construir", en: "Let's build" },
     heading2: { pt: "algo juntos.",    en: "something." },
     desc: {
-      pt: "Estou buscando oportunidades em Full-Stack, E-commerce e ML, remoto ou em Sao Paulo. Se voce tem um problema interessante pra resolver, me fala.",
-      en: "I'm actively looking for Full-Stack, E-commerce, and ML engineering roles — remote or São Paulo-based. If you have an interesting problem to solve, I want to hear about it.",
+      pt: "Aberto a oportunidades em desenvolvimento fullstack — startups, empresas de produto ou consultoria. Estou em São Paulo, mas trabalho remoto. Se tiver um problema interessante pra resolver, manda mensagem.",
+      en: "Open to fullstack development opportunities — startups, product companies, or consulting. Based in São Paulo, but work remote. If you have an interesting problem to solve, reach out.",
     },
   },
 

@@ -45,5 +45,14 @@ next-env.d.ts
 #Claude
 
 AGENTS.md
-CLAUDE.md 
+CLAUDE.md
 
+# AI tooling (local only)
+.claude/
+.agents/
+.superpowers/
+.vscode/
+skills-lock.json
+
+# CV source (contem dados de contato pessoais)
+/cv/

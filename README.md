@@ -1,90 +1,112 @@
 # Nicolas Martins — Developer Portfolio
 
-Personal portfolio built with **Next.js 16**, **TypeScript**, and **Tailwind CSS v4**.
-Designed to communicate technical depth and product thinking to engineering recruiters.
+Portfólio pessoal em **Next.js 16**, **TypeScript** e **Tailwind CSS v4**.
+Bilíngue (pt-BR / en), export estático, sem dependência de runtime no servidor.
+
+🔗 [github.com/nemcolas/nicolasmartins](https://github.com/nemcolas/nicolasmartins)
 
 ## Stack
 
-| Layer | Tech |
-|-------|------|
+| Camada | Tech |
+|--------|------|
 | Framework | Next.js 16 (App Router, Static Export) |
-| Language | TypeScript |
-| Styling | Tailwind CSS v4 |
-| Icons | Lucide React |
+| Linguagem | TypeScript |
+| Estilo | Tailwind CSS v4 |
+| Ícones | Lucide React |
+| i18n | Context API própria, sem lib externa |
 | Deploy | Vercel (zero-config) |
 
-## Architecture
+Quatro dependências de produção no total: `next`, `react`, `react-dom`, `lucide-react`.
+
+## Arquitetura
 
 ```
 src/
 ├── app/
-│   ├── globals.css       # Tailwind v4 + global styles
-│   ├── layout.tsx        # Root layout + SEO metadata
-│   └── page.tsx          # Section composition
+│   ├── globals.css          # Tailwind v4 + estilos globais
+│   ├── layout.tsx           # Root layout + metadata de SEO
+│   └── page.tsx             # Composição das seções
 ├── components/
-│   ├── Navbar.tsx        # Sticky navbar with mobile menu
-│   ├── Hero.tsx          # Hero section with CTA
-│   ├── About.tsx         # Bio + stats + education
-│   ├── Experience.tsx    # Timeline of work history
-│   ├── Skills.tsx        # Skill categories + certifications
-│   ├── Projects.tsx      # Case-study project cards
-│   ├── Contact.tsx       # Contact CTA + social links
-│   └── Footer.tsx        # Minimal footer
-└── data/
-    ├── projects.ts       # Project case study data
-    ├── skills.ts         # Skill categories + certifications
-    └── experience.ts     # Work experience data
+│   ├── Navbar.tsx           # Navbar sticky com menu mobile
+│   ├── Hero.tsx             # Hero com parallax e spotlight no cursor
+│   ├── About.tsx            # Bio, stats e formação
+│   ├── Experience.tsx       # Timeline de experiência
+│   ├── Skills.tsx           # Categorias de skills + certificações
+│   ├── Projects.tsx         # Cards de projeto em formato de estudo de caso
+│   ├── Automations.tsx      # Automações em produção no trabalho atual
+│   ├── AIUsage.tsx          # Como uso IA no dia a dia
+│   ├── Contact.tsx          # CTA de contato + links sociais
+│   ├── Footer.tsx           # Rodapé
+│   ├── MagicCard.tsx        # Card com borda que segue o cursor
+│   └── EasterEgg.tsx        # Easter egg interativo
+├── contexts/
+│   └── LanguageContext.tsx  # Estado de idioma (pt-BR / en)
+├── data/
+│   ├── translations.ts      # Todas as strings de UI + tipos Lang/BiStr
+│   ├── projects.ts          # Estudos de caso dos projetos
+│   ├── experience.ts        # Histórico profissional
+│   ├── automations.ts       # Automações
+│   └── skills.ts            # Certificações (+ espelho das categorias)
+└── hooks/
+    └── useInView.ts         # IntersectionObserver para animações de entrada
 ```
 
-All content lives in typed data files — update copy without touching components.
+Todo o conteúdo vive em arquivos de dados tipados — dá pra atualizar copy sem tocar em componente.
 
-## Getting Started
+## Rodando local
 
 ```bash
 npm install
 npm run dev     # http://localhost:3000
-npm run build   # Static export → /out directory
+npm run build   # Export estático → /out
 ```
 
-## Deployment (Vercel)
+Não há variáveis de ambiente. O build é totalmente estático.
 
-1. Push to GitHub (`git remote set-url origin https://github.com/nemcolas/nicolas-martins.git`)
-2. Import repo at vercel.com
-3. Framework: Next.js (auto-detected)
-4. Deploy — no environment variables needed
+## Decisões de design
 
-The `output: 'export'` config in `next.config.ts` produces a fully static build.
+- **Dark theme fixo** — identidade consistente, sem toggle.
+- **Conteúdo desacoplado da UI** — dados tipados em `src/data`, componentes só renderizam.
+- **i18n sem biblioteca** — Context API + objeto `BiStr` (`{ pt, en }`). Troca de idioma sem reload.
+- **Sem lib de animação** — só CSS transitions e IntersectionObserver, pra manter o bundle mínimo.
+- **Export estático** — zero cold start, custo zero em idle.
+- **Projetos como estudo de caso** — Problema → Solução → Decisões → Desafios → Impacto, em vez de screenshot com lista de tecnologias.
 
-## Design Decisions
+## Atualizando conteúdo
 
-- **Forced dark theme** — consistent brand identity, no toggle
-- **Content-first** — data files decoupled from UI components
-- **No animation libraries** — CSS transitions only, minimal bundle
-- **Static export** — optimal performance for a portfolio use case
-- **Case-study format** — projects presented as Problem → Solution → Impact
+Textos bilíngues usam o tipo `BiStr` de `src/data/translations.ts`:
 
-## Updating Content
+```ts
+export type BiStr = { pt: string; en: string };
+```
 
-To add or update a project, edit `src/data/projects.ts`:
+Para adicionar um projeto, edite `src/data/projects.ts`:
 
 ```ts
 {
-  id: "my-project",
-  title: "Project Title",
-  tagline: "One-line description",
+  id: "meu-projeto",
+  title: "Título do Projeto",
+  tagline: { pt: "Uma linha em português", en: "One line in English" },
   tags: ["Next.js", "TypeScript"],
-  featured: true,           // true = full case study card
-  status: "production",     // "production" | "prototype" | "wip"
+  featured: true,             // true = card completo de estudo de caso
+  status: "production",       // "production" | "prototype" | "wip"
   github: "https://github.com/nemcolas/repo",
-  live: "https://...",      // optional
-  problem: "...",
-  solution: "...",
-  decisions: ["..."],
-  challenges: ["..."],
-  impact: ["..."],
+  live: "https://...",        // opcional
+  problem:  { pt: "...", en: "..." },
+  solution: { pt: "...", en: "..." },
+  decisions:  [{ pt: "...", en: "..." }],
+  challenges: [{ pt: "...", en: "..." }],
+  impact:     [{ pt: "...", en: "..." }],
 }
 ```
 
-## License
+As strings de interface (navbar, headings, labels) ficam em `src/data/translations.ts`.
 
-MIT
+## Deploy
+
+1. Push para o GitHub.
+2. Importar o repositório em [vercel.com](https://vercel.com).
+3. Framework detectado automaticamente como Next.js.
+4. Deploy — sem variáveis de ambiente.
+
+O `output: 'export'` em `next.config.ts` gera o build estático em `/out`.

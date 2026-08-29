@@ -15,10 +15,10 @@ export const i18n = {
 
   hero: {
     available:    { pt: "Disponível para oportunidades",    en: "Available for opportunities" },
-    role:         { pt: "Desenvolvedor Fullstack",          en: "Fullstack Developer" },
+    role:         { pt: "Desenvolvedor Fullstack · E-commerce Headless", en: "Fullstack Developer · Headless Commerce" },
     description:  {
-      pt: "Construo produtos completos,do front ao banco de dados. Tenho experiência com SaaS, mobile e e-commerce. Atualmente trabalho com Magento 2, integrações com ERP e automações que resolvem problemas reais de operação.",
-      en: "I build complete products,from frontend to database. I have experience with SaaS, mobile, and e-commerce. Currently working with Magento 2, ERP integrations, and automations that solve real operational problems.",
+      pt: "Construo storefronts headless em React, Next.js e Hydrogen consumindo GraphQL do Magento 2 e da Shopify. Também entrego produto completo, do front ao banco: SaaS multi-tenant, integrações com ERP e automações que resolvem problemas reais de operação.",
+      en: "I build headless storefronts with React, Next.js, and Hydrogen consuming GraphQL from Magento 2 and Shopify. I also ship complete products, from frontend to database: multi-tenant SaaS, ERP integrations, and automations that solve real operational problems.",
     },
     cta_projects: { pt: "Ver Projetos",       en: "View Projects" },
     cta_contact:  { pt: "Entrar em Contato",  en: "Get in Touch" },
@@ -34,8 +34,8 @@ export const i18n = {
       en: "Developer who understands the business, not just the code.",
     },
     p1: {
-      pt: "Trabalho como Desenvolvedor Fullstack na Prospirity,construo ferramentas internas com Next.js, React e TypeScript, faço integrações entre e-commerce e ERPs, e crio automações que resolvem problemas reais de operação: controle de estoque, curva ABC, reposicionamento de grade de produtos.",
-      en: "I work as a Fullstack Developer at Prospirity,building internal tools with Next.js, React, and TypeScript, integrating e-commerce platforms with ERPs, and creating automations that solve real operational problems: inventory control, ABC curve analysis, product grid repositioning.",
+      pt: "Trabalho como Desenvolvedor Fullstack na Prospirity,construo storefronts headless em React, Next.js e Hydrogen consumindo GraphQL do Magento 2 e da Shopify, desenvolvo ferramentas internas com TypeScript, faço integrações entre e-commerce e ERPs, e crio automações que resolvem problemas reais de operação: controle de estoque, curva ABC, reposicionamento de grade de produtos.",
+      en: "I work as a Fullstack Developer at Prospirity,building headless storefronts with React, Next.js, and Hydrogen consuming GraphQL from Magento 2 and Shopify, developing internal tools with TypeScript, integrating e-commerce platforms with ERPs, and creating automations that solve real operational problems: inventory control, ABC curve analysis, product grid repositioning.",
     },
     p2: {
       pt: "Antes disso, passei um ano numa software house onde fui além do código: participei de reuniões com stakeholders, escrevi documentação de produto, defini escopo e coordenei squads. Formado em Análise e Desenvolvimento de Sistemas pela FIAP, com certificação em Machine Learning pelo Coursera (Andrew Ng).",
@@ -67,13 +67,10 @@ export const i18n = {
     label:          { pt: "Habilidades",              en: "Skills" },
     heading:        { pt: "Com o que trabalho",       en: "What I work with" },
     certs_heading:  { pt: "Certificações",             en: "Certifications" },
+    cat_ecommerce:  { pt: "E-commerce Headless",      en: "Headless Commerce" },
     cat_frontend:   { pt: "Front-end",                en: "Frontend" },
-    cat_backend:    { pt: "Back-end",                 en: "Backend" },
-    cat_ecommerce:  { pt: "E-commerce & Integrações", en: "E-commerce & Integrations" },
-    cat_languages:  { pt: "Linguagens",               en: "Languages" },
-    cat_data:       { pt: "Dados & ML",               en: "Data & ML" },
-    cat_databases:  { pt: "Bancos de Dados",          en: "Databases" },
-    cat_devops:     { pt: "DevOps & Cloud",           en: "DevOps & Cloud" },
+    cat_backend:    { pt: "Back-end & Dados",         en: "Backend & Data" },
+    cat_tools:      { pt: "Infra & Ferramentas",      en: "Infra & Tooling" },
   },
 
   projects: {

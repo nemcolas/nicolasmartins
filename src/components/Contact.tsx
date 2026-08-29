@@ -66,7 +66,7 @@ export function Contact() {
               GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/nicolas-a-martins/"
+              href="https://www.linkedin.com/in/nicolas-alexandre-martins/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-zinc-800 hover:border-zinc-600 text-zinc-500 hover:text-zinc-300 text-sm font-mono transition-all"

@@ -23,7 +23,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Nicolas Martins | Desenvolvedor Fullstack",
   description:
-    "Desenvolvedor Fullstack com experiência em SaaS, e-commerce (Magento 2) e automações operacionais. Trabalha com Next.js, React, TypeScript, Python e integrações com ERPs como Tiny e Eccosys.",
+    "Desenvolvedor Fullstack com experiência em e-commerce headless: layouts em React, Next.js e Hydrogen consumindo GraphQL do Magento 2 e da Shopify. Também trabalha com TypeScript, Python, automações operacionais e integrações com ERPs como Tiny e Eccosys.",
   keywords: [
     "Fullstack Developer",
     "Full-Stack Developer",
@@ -33,7 +33,17 @@ export const metadata: Metadata = {
     "Python Developer",
     "TypeScript",
     "Magento 2",
+    "Shopify",
+    "Shopify Developer",
+    "Shopify Hydrogen",
+    "Magento Developer",
+    "Headless Commerce",
+    "GraphQL",
     "E-commerce Developer",
+    "Desenvolvedor E-commerce",
+    "Front-end E-commerce",
+    "Agência Digital",
+    "Landing Page",
     "ERP Integration",
     "Tiny ERP",
     "Automação",
@@ -50,14 +60,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Nicolas Martins | Desenvolvedor Fullstack",
     description:
-      "Desenvolvedor Fullstack especializado em e-commerce, automações operacionais e integrações com ERP.",
+      "Desenvolvedor Fullstack especializado em e-commerce headless (React, Next.js, Hydrogen, GraphQL), automações operacionais e integrações com ERP.",
     siteName: "Nicolas Martins Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Nicolas Martins | Desenvolvedor Fullstack",
     description:
-      "Desenvolvedor Fullstack especializado em e-commerce, automações operacionais e integrações com ERP.",
+      "Desenvolvedor Fullstack especializado em e-commerce headless (React, Next.js, Hydrogen, GraphQL), automações operacionais e integrações com ERP.",
   },
   robots: {
     index: true,

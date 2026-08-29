@@ -22,10 +22,14 @@ export const experiences: Experience[] = [
     current: true,
     location: "São Paulo, SP",
     summary: {
-      pt: "Desenvolvimento e manutenção de aplicacoes de e-commerce: integracoes com ERPs, ferramentas internas com Next.js/React/TypeScript e suporte a plataformas de loja.",
-      en: "Building and maintaining e-commerce applications: ERP integrations, internal tooling with Next.js/React/TypeScript, and storefront platform support.",
+      pt: "Desenvolvimento e manutenção de aplicações de e-commerce: storefronts headless em React/Next.js/Hydrogen consumindo GraphQL, integrações com ERPs e ferramentas internas em TypeScript.",
+      en: "Building and maintaining e-commerce applications: headless storefronts in React/Next.js/Hydrogen consuming GraphQL, ERP integrations, and internal tooling in TypeScript.",
     },
     highlights: [
+      {
+        pt: "Construo storefronts headless em React, Next.js e Shopify Hydrogen, consumindo as APIs GraphQL do Magento 2 e da Shopify Storefront para montar PLP, PDP, carrinho e checkout.",
+        en: "Build headless storefronts with React, Next.js, and Shopify Hydrogen, consuming the Magento 2 and Shopify Storefront GraphQL APIs to assemble PLP, PDP, cart, and checkout.",
+      },
       {
         pt: "Crio automações em Python que resolvem problemas reais de operação: detecção de divergência de SKU entre Tiny ERP e Magento 2, curva ABC de produtos, reposicionamento de grade e relatórios de performance.",
         en: "Build Python automations that solve real operational problems: SKU divergence detection between Tiny ERP and Magento 2, product ABC curve, grid repositioning, and performance reports.",
@@ -43,39 +47,40 @@ export const experiences: Experience[] = [
         en: "Maintain and customize Magento 2 stores: modules, REST APIs, and custom extensions.",
       },
     ],
-    tags: ["Next.js", "React", "TypeScript", "Python", "Magento 2", "Tiny ERP", "REST API"],
+    tags: ["Next.js", "React", "Hydrogen", "GraphQL", "TypeScript", "Python", "Magento 2", "Shopify", "Tiny ERP", "REST API"],
   },
   {
-    company: "Software House",
+    company: "Rime Tecnologia",
     role: {
-      pt: "Analista de Requisitos e Desenvolvimento",
-      en: "Full-Stack Developer & Product Analyst",
+      pt: "Analista de Requisitos e Desenvolvedor Full-Stack",
+      en: "Requirements Analyst & Full-Stack Developer",
     },
     period: { pt: "Nov 2024 - Out 2025", en: "Nov 2024 - Oct 2025" },
     current: false,
     location: "São Paulo, SP",
     summary: {
-      pt: "Atuei no ciclo completo de produtos digitais: participava de reunioes com stakeholders, elaborava documentacao da aplicacao e desenvolvia as solucoes do zero ao deploy.",
-      en: "Owned the full lifecycle of digital products: from stakeholder meetings and product documentation to building and deploying the solutions.",
+      pt: "Fui a ponte entre cliente e time técnico: levantava requisito em reunião, escrevia a documentação e entregava a solução do zero ao deploy. Web, mobile e landing pages, com escopo e prazo acordados direto com o stakeholder.",
+      en: "I was the bridge between client and engineering: gathering requirements in meetings, writing the documentation, and shipping the solution from scratch to deploy. Web, mobile, and landing pages, with scope and deadlines agreed directly with the stakeholder.",
     },
     highlights: [
       {
-        pt: "Participava ativamente de reunioes com stakeholders para levantamento de requisitos, alinhamento de escopo e priorizacao de backlog.",
-        en: "Active participant in stakeholder meetings: requirements gathering, scope alignment, and backlog prioritization.",
+        pt: "Conduzia reuniões de levantamento e traduzia pedido de cliente em escopo fechado, backlog priorizado e prazo realista.",
+        en: "Ran requirements meetings and translated client requests into closed scope, prioritized backlog, and realistic deadlines.",
       },
       {
-        pt: "Elaborei documentacao tecnica de aplicacoes: UML, casos de uso, specs de API e fluxos de usuario.",
-        en: "Wrote full application documentation: UML, use cases, API specs, and user flows.",
+        pt: "Entreguei soluções web e mobile de ponta a ponta: landing pages, sistemas embarcados e aplicações escaláveis.",
+        en: "Delivered end-to-end web and mobile solutions: landing pages, embedded systems, and scalable applications.",
       },
       {
-        pt: "Desenvolvi solucoes Full-Stack web e mobile, incluindo landing pages, sistemas embarcados e apps escaláveis.",
-        en: "Built Full-Stack web and mobile solutions: landing pages, embedded systems, and scalable apps.",
+        pt: "Escrevia a documentação que sustentava a entrega, UML, casos de uso, specs de API e fluxos de usuário, reduzindo retrabalho e ruído com o cliente.",
+        en: "Wrote the documentation that held delivery together, UML, use cases, API specs, and user flows, cutting rework and client-side noise.",
       },
       {
-        pt: "Coordenei squads multidisciplinares, conectando time tecnico e necessidades de negocio.",
-        en: "Coordinated multidisciplinary squads bridging engineering and business requirements.",
+        pt: "Coordenei squads multidisciplinares, mantendo a entrega dentro do prazo e alinhada com a expectativa do cliente.",
+        en: "Coordinated multidisciplinary squads, keeping delivery on schedule and aligned with client expectations.",
       },
     ],
+    tags: ["Web & Mobile", "Landing Pages", "Sistemas Embarcados", "UML", "Gestão de Backlog"],
   },
   {
     company: "Setor de A&B",

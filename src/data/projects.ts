@@ -142,7 +142,7 @@ export const projects: Project[] = [
       en: "Jupyter notebooks transformed into an interactive web dashboard,environmental data accessible to everyone.",
     },
     tags: ["Python", "Pandas", "Scikit-learn", "Next.js", "Recharts", "TypeScript", "Data Viz"],
-    featured: true,
+    featured: false,
     status: "prototype",
     github: "https://github.com/nemcolas/GSIA",
     live: "https://gsia-dashboard.vercel.app",
@@ -170,8 +170,8 @@ export const projects: Project[] = [
     ],
     challenges: [
       {
-        pt: "O R²=0.20 da regressao linear e fraco para um feature unico. Em vez de esconder, o dashboard contextualiza: explica por que um modelo multivariado seria necessario.",
-        en: "The linear regression R²=0.20 is weak from a single feature. Rather than hide it, the dashboard contextualizes it: explaining why multivariate models are needed.",
+        pt: "A regressão linear com uma única variável explicou pouco da variação dos dados (R²=0.20). Em vez de esconder o número ou trocar de modelo sem justificativa, publiquei o resultado no dashboard com a leitura correta: o fenômeno é multivariado e uma feature só não dá conta. O valor do projeto está no pipeline de ponta a ponta, não na força do modelo.",
+        en: "The single-feature linear regression explained little of the variance (R²=0.20). Rather than hide the number or swap models without justification, I shipped the result with the right reading: the phenomenon is multivariate and one feature cannot capture it. The value here is the end-to-end pipeline, not the model's strength.",
       },
       {
         pt: "Padronizar nomes de paises em 5 CSVs diferentes com convencoes inconsistentes.",

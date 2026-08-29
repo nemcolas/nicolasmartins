@@ -6,34 +6,24 @@ export type SkillCategory = {
 
 export const skillCategories: SkillCategory[] = [
   {
+    name: "E-commerce Headless",
+    icon: "ShoppingBag",
+    skills: ["Magento 2", "Shopify", "Hydrogen", "GraphQL", "PHP", "Tiny ERP", "REST APIs"],
+  },
+  {
     name: "Frontend",
     icon: "Layout",
-    skills: ["React.js", "Next.js", "TypeScript", "HTML5", "CSS3", "Tailwind CSS"],
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native"],
   },
   {
-    name: "Backend",
+    name: "Backend & Data",
     icon: "Server",
-    skills: ["Node.js", "NestJS", "Spring Boot", "REST APIs", "Swagger"],
+    skills: ["Node.js", "Python", "Pandas", "Scikit-learn", "PostgreSQL", "Prisma"],
   },
   {
-    name: "Languages",
-    icon: "Code",
-    skills: ["TypeScript", "Python", "Java", "C#"],
-  },
-  {
-    name: "Data & ML",
-    icon: "BarChart",
-    skills: ["Pandas", "Scikit-learn", "PyTorch", "Matplotlib", "Jupyter"],
-  },
-  {
-    name: "Databases",
-    icon: "Database",
-    skills: ["PostgreSQL", "MongoDB", "MySQL", "Oracle", "Prisma ORM"],
-  },
-  {
-    name: "DevOps & Cloud",
+    name: "Infra & Tooling",
     icon: "Cloud",
-    skills: ["Docker", "AWS", "Azure", "Bash", "CI/CD"],
+    skills: ["Vercel", "Git", "Stripe", "Clerk"],
   },
 ];
 

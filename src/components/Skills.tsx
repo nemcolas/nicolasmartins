@@ -1,19 +1,17 @@
 "use client";
 
-import { Monitor, Server, Code2, BarChart2, Database, Cloud, Award, ShoppingBag } from "lucide-react";
+import { Monitor, Server, Cloud, Award, ShoppingBag } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { i18n } from "@/data/translations";
 import { certifications } from "@/data/skills";
 import { useInView } from "@/hooks/useInView";
 
+// Regra: so entra tecnologia que aparece em um projeto exibido ou no trabalho atual.
 const CATEGORIES = [
-  { key: "cat_frontend" as const, icon: <Monitor className="w-3.5 h-3.5" />, skills: ["React.js", "Next.js", "TypeScript", "HTML5", "CSS3", "Tailwind CSS"] },
-  { key: "cat_backend" as const, icon: <Server className="w-3.5 h-3.5" />, skills: ["Node.js", "NestJS", "Spring Boot", "REST APIs", "Swagger"] },
-  { key: "cat_ecommerce" as const, icon: <ShoppingBag className="w-3.5 h-3.5" />, skills: ["Magento 2", "Tiny ERP", "Eccosys", "PHP", "Automações"] },
-  { key: "cat_languages" as const, icon: <Code2 className="w-3.5 h-3.5" />, skills: ["TypeScript", "Python", "Java", "C#", "PHP"] },
-  { key: "cat_data" as const, icon: <BarChart2 className="w-3.5 h-3.5" />, skills: ["Pandas", "Scikit-learn", "PyTorch", "Matplotlib", "Jupyter"] },
-  { key: "cat_databases" as const, icon: <Database className="w-3.5 h-3.5" />, skills: ["PostgreSQL", "MongoDB", "MySQL", "Oracle", "Prisma ORM"] },
-  { key: "cat_devops" as const, icon: <Cloud className="w-3.5 h-3.5" />, skills: ["Docker", "AWS", "Azure", "Bash", "CI/CD"] },
+  { key: "cat_ecommerce" as const, icon: <ShoppingBag className="w-3.5 h-3.5" />, skills: ["Magento 2", "Shopify", "Hydrogen", "GraphQL", "PHP", "Tiny ERP", "REST APIs"] },
+  { key: "cat_frontend" as const, icon: <Monitor className="w-3.5 h-3.5" />, skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native"] },
+  { key: "cat_backend" as const, icon: <Server className="w-3.5 h-3.5" />, skills: ["Node.js", "Python", "Pandas", "Scikit-learn", "PostgreSQL", "Prisma"] },
+  { key: "cat_tools" as const, icon: <Cloud className="w-3.5 h-3.5" />, skills: ["Vercel", "Git", "Stripe", "Clerk"] },
 ];
 
 export function Skills() {

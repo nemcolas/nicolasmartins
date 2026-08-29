@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ArrowRight, MapPin, Download } from "lucide-react";
+import { track } from "@vercel/analytics";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { i18n } from "@/data/translations";
 
@@ -138,6 +139,7 @@ export function Hero() {
           <a
             href={lang === "pt" ? "/Nicolas_Martins_CV_2026.pdf" : "/Nicolas_Martins_CV_2026_EN.pdf"}
             download
+            onClick={() => track("cv_download", { lang })}
             className="inline-flex items-center gap-2 px-5 py-2.5 border border-zinc-800/60 hover:border-zinc-700 text-zinc-600 hover:text-zinc-400 rounded-lg font-medium text-sm transition-all duration-200"
           >
             <Download className="w-4 h-4" />

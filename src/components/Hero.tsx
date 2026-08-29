@@ -136,7 +136,7 @@ export function Hero() {
             {t.cta_github[lang]}
           </a>
           <a
-            href="/Nicolas_Alexandre_Martins_2026.pdf"
+            href={lang === "pt" ? "/Nicolas_Martins_CV_2026.pdf" : "/Nicolas_Martins_CV_2026_EN.pdf"}
             download
             className="inline-flex items-center gap-2 px-5 py-2.5 border border-zinc-800/60 hover:border-zinc-700 text-zinc-600 hover:text-zinc-400 rounded-lg font-medium text-sm transition-all duration-200"
           >
